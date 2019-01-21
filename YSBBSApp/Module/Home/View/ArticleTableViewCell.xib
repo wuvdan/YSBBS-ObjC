@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="321" id="KGk-i7-Jjw" customClass="ArticleTableViewCell">
+            <rect key="frame" x="0.0" y="0.0" width="410" height="321"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="410" height="320.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="y0v-OT-McH">
+                        <rect key="frame" x="15" y="15" width="45" height="45"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="45" id="3xL-rJ-FpW"/>
+                            <constraint firstAttribute="width" constant="45" id="Dyj-IA-G12"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="昵称" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Adk-FI-XGJ">
+                        <rect key="frame" x="73" y="29.5" width="27" height="16"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                        <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pX4-rg-rHa">
+                        <rect key="frame" x="15" y="294.5" width="33" height="16"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                        <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mqd-07-vnl">
+                        <rect key="frame" x="320" y="277.5" width="75" height="50"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                        <color key="tintColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <state key="normal" title="点赞" image="item-btn-like-white-act">
+                            <color key="titleColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </state>
+                        <connections>
+                            <action selector="likeTouched:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="VEq-06-SqL"/>
+                        </connections>
+                    </button>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pyA-zG-N5W">
+                        <rect key="frame" x="35" y="75" width="340" height="18"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="fj9-Xw-Kta">
+                        <rect key="frame" x="35" y="130" width="340" height="154.5"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="KNu-kJ-Vb6">
+                            <size key="itemSize" width="80" height="100"/>
+                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                        </collectionViewFlowLayout>
+                        <connections>
+                            <outlet property="dataSource" destination="-1" id="rGX-bD-KMI"/>
+                            <outlet property="delegate" destination="-1" id="ycP-ZE-2J1"/>
+                        </connections>
+                    </collectionView>
+                    <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sUM-Ny-eaU">
+                        <rect key="frame" x="241" y="277.5" width="69" height="50"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                        <color key="tintColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <state key="normal" title="评论" image="item-btn-comment-white-act">
+                            <color key="titleColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </state>
+                        <connections>
+                            <action selector="commnetTouched:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="wDZ-na-Orx"/>
+                        </connections>
+                    </button>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fxg-tm-dkc">
+                        <rect key="frame" x="35" y="103" width="340" height="17"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="trailingMargin" secondItem="fxg-tm-dkc" secondAttribute="trailing" constant="15" id="5Uu-It-d4b"/>
+                    <constraint firstItem="fxg-tm-dkc" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="15" id="7M6-QE-LoH"/>
+                    <constraint firstItem="fj9-Xw-Kta" firstAttribute="top" secondItem="fxg-tm-dkc" secondAttribute="bottom" constant="10" id="NWr-aK-wW3"/>
+                    <constraint firstItem="pX4-rg-rHa" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="15" id="To6-hI-DrG"/>
+                    <constraint firstAttribute="trailing" secondItem="mqd-07-vnl" secondAttribute="trailing" constant="15" id="UO6-nr-hAw"/>
+                    <constraint firstItem="pyA-zG-N5W" firstAttribute="top" secondItem="y0v-OT-McH" secondAttribute="bottom" constant="15" id="Utc-tl-h0Q"/>
+                    <constraint firstAttribute="bottom" secondItem="pX4-rg-rHa" secondAttribute="bottom" constant="10" id="VAa-Jc-NGI"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="pyA-zG-N5W" secondAttribute="trailing" constant="15" id="Ww7-TF-AOo"/>
+                    <constraint firstItem="y0v-OT-McH" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="15" id="YSN-qh-uC4"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="fj9-Xw-Kta" secondAttribute="trailing" constant="15" id="amC-Xo-okp"/>
+                    <constraint firstItem="Adk-FI-XGJ" firstAttribute="leading" secondItem="y0v-OT-McH" secondAttribute="trailing" constant="13" id="cad-91-ntL"/>
+                    <constraint firstItem="y0v-OT-McH" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="15" id="fw8-YU-JPn"/>
+                    <constraint firstItem="fxg-tm-dkc" firstAttribute="top" secondItem="pyA-zG-N5W" secondAttribute="bottom" constant="10" id="g9Q-nb-XBl"/>
+                    <constraint firstItem="pyA-zG-N5W" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="15" id="gUg-td-7ZZ"/>
+                    <constraint firstItem="pX4-rg-rHa" firstAttribute="top" secondItem="fj9-Xw-Kta" secondAttribute="bottom" constant="10" id="kve-H7-MM9"/>
+                    <constraint firstItem="Adk-FI-XGJ" firstAttribute="centerY" secondItem="y0v-OT-McH" secondAttribute="centerY" id="n1z-5V-OUb"/>
+                    <constraint firstItem="sUM-Ny-eaU" firstAttribute="centerY" secondItem="pX4-rg-rHa" secondAttribute="centerY" id="ob6-sR-v67"/>
+                    <constraint firstItem="mqd-07-vnl" firstAttribute="leading" secondItem="sUM-Ny-eaU" secondAttribute="trailing" constant="10" id="sbd-Mu-LbF"/>
+                    <constraint firstItem="mqd-07-vnl" firstAttribute="centerY" secondItem="pX4-rg-rHa" secondAttribute="centerY" id="yXs-AP-k6u"/>
+                    <constraint firstItem="fj9-Xw-Kta" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="15" id="z4b-Oe-e4t"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="aW0-zy-SZf"/>
+            <connections>
+                <outlet property="collectionView" destination="fj9-Xw-Kta" id="ES5-ti-5QL"/>
+                <outlet property="commentButton" destination="sUM-Ny-eaU" id="j6Y-er-d9W"/>
+                <outlet property="contentLabel" destination="fxg-tm-dkc" id="oB0-pA-eOJ"/>
+                <outlet property="headerImageView" destination="y0v-OT-McH" id="L1Q-1l-ymu"/>
+                <outlet property="layout" destination="KNu-kJ-Vb6" id="zHg-QR-wut"/>
+                <outlet property="likeButton" destination="mqd-07-vnl" id="jsA-sg-qFV"/>
+                <outlet property="nickNameLabel" destination="Adk-FI-XGJ" id="yCm-zi-Z7K"/>
+                <outlet property="timeLabel" destination="pX4-rg-rHa" id="rqv-4Q-nSa"/>
+                <outlet property="titleLabel" destination="pyA-zG-N5W" id="nu1-12-wJ9"/>
+            </connections>
+            <point key="canvasLocation" x="57.600000000000001" y="125.4872563718141"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="item-btn-comment-white-act" width="42" height="50"/>
+        <image name="item-btn-like-white-act" width="48" height="50"/>
+    </resources>
+</document>

@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="156" id="KGk-i7-Jjw" customClass="UserListArticleImageCell">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="156"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="155.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SCh-LX-OUL">
+                        <rect key="frame" x="277" y="108.5" width="33" height="37"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                        <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="KUg-1d-YsF">
+                        <rect key="frame" x="226.5" y="15" width="83.5" height="83.5"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="83.5" id="fdY-Gx-c0K"/>
+                            <constraint firstAttribute="width" constant="83.5" id="sga-qy-Z0O"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iCp-xB-J1F">
+                        <rect key="frame" x="15" y="15" width="201.5" height="20.5"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="C5y-4F-kQr">
+                        <rect key="frame" x="15" y="45.5" width="201.5" height="18"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                        <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GUH-b1-Lom">
+                        <rect key="frame" x="10" y="73.5" width="48" height="107"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                        <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <inset key="titleEdgeInsets" minX="-12" minY="0.0" maxX="0.0" maxY="0.0"/>
+                        <inset key="imageEdgeInsets" minX="-22" minY="0.0" maxX="0.0" maxY="0.0"/>
+                        <state key="normal" title="1" image="item-btn-comment-white-act">
+                            <color key="titleColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </state>
+                    </button>
+                    <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="L2h-0X-gdo">
+                        <rect key="frame" x="68" y="102" width="55" height="50"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                        <color key="tintColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <inset key="titleEdgeInsets" minX="-12" minY="0.0" maxX="0.0" maxY="0.0"/>
+                        <inset key="imageEdgeInsets" minX="-22" minY="0.0" maxX="0.0" maxY="0.0"/>
+                        <state key="normal" title="1" image="item-btn-like-white-act">
+                            <color key="titleColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </state>
+                    </button>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="GUH-b1-Lom" firstAttribute="top" secondItem="C5y-4F-kQr" secondAttribute="bottom" constant="10" id="4cM-yn-JFO"/>
+                    <constraint firstAttribute="trailing" secondItem="SCh-LX-OUL" secondAttribute="trailing" constant="10" id="60d-E0-hBb"/>
+                    <constraint firstItem="SCh-LX-OUL" firstAttribute="top" secondItem="KUg-1d-YsF" secondAttribute="bottom" constant="10" id="6zF-aR-vxt"/>
+                    <constraint firstAttribute="bottom" secondItem="SCh-LX-OUL" secondAttribute="bottom" constant="10" id="BRS-zN-Xj0"/>
+                    <constraint firstItem="L2h-0X-gdo" firstAttribute="centerY" secondItem="GUH-b1-Lom" secondAttribute="centerY" id="F53-Hk-Scv"/>
+                    <constraint firstItem="iCp-xB-J1F" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="15" id="FCo-wF-l2e"/>
+                    <constraint firstItem="KUg-1d-YsF" firstAttribute="leading" secondItem="C5y-4F-kQr" secondAttribute="trailing" constant="10" id="J5n-wa-1n4"/>
+                    <constraint firstItem="L2h-0X-gdo" firstAttribute="leading" secondItem="GUH-b1-Lom" secondAttribute="trailing" constant="10" id="QDX-nL-fBC"/>
+                    <constraint firstItem="iCp-xB-J1F" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="15" id="Txg-YT-f6M"/>
+                    <constraint firstAttribute="trailing" secondItem="KUg-1d-YsF" secondAttribute="trailing" constant="10" id="UkD-UL-JZg"/>
+                    <constraint firstItem="KUg-1d-YsF" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="15" id="gdi-0P-N15"/>
+                    <constraint firstItem="KUg-1d-YsF" firstAttribute="leading" secondItem="iCp-xB-J1F" secondAttribute="trailing" constant="10" id="kII-Cq-BpW"/>
+                    <constraint firstItem="C5y-4F-kQr" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="15" id="rgf-xf-0ry"/>
+                    <constraint firstItem="GUH-b1-Lom" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="uBN-7W-oa4"/>
+                    <constraint firstItem="GUH-b1-Lom" firstAttribute="centerY" secondItem="SCh-LX-OUL" secondAttribute="centerY" id="wnt-4k-3Bb"/>
+                    <constraint firstItem="C5y-4F-kQr" firstAttribute="top" secondItem="iCp-xB-J1F" secondAttribute="bottom" constant="10" id="yJC-kc-8Qw"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="aW0-zy-SZf"/>
+            <connections>
+                <outlet property="commentButton" destination="GUH-b1-Lom" id="qrh-Ho-4gf"/>
+                <outlet property="contentLabel" destination="C5y-4F-kQr" id="p3z-J5-7eA"/>
+                <outlet property="contentimageView" destination="KUg-1d-YsF" id="eGb-iJ-N78"/>
+                <outlet property="likeButton" destination="L2h-0X-gdo" id="lTN-yb-j82"/>
+                <outlet property="timeLabel" destination="SCh-LX-OUL" id="nAZ-ao-rph"/>
+                <outlet property="titleLabel" destination="iCp-xB-J1F" id="38C-bW-8Pu"/>
+            </connections>
+            <point key="canvasLocation" x="129.59999999999999" y="136.73163418290855"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="item-btn-comment-white-act" width="42" height="50"/>
+        <image name="item-btn-like-white-act" width="48" height="50"/>
+    </resources>
+</document>

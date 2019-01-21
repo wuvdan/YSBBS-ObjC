@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="136" id="KGk-i7-Jjw" customClass="UserListArticleCell">
+            <rect key="frame" x="0.0" y="0.0" width="367" height="136"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="367" height="135.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pef-vu-WI4">
+                        <rect key="frame" x="10" y="15" width="347" height="21"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fET-VL-edU">
+                        <rect key="frame" x="324" y="109.5" width="33" height="16"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                        <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9bU-Gt-deW">
+                        <rect key="frame" x="10" y="46" width="347" height="18"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                        <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="M37-Zd-yLE">
+                        <rect key="frame" x="68" y="74" width="54" height="87"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                        <color key="tintColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <inset key="titleEdgeInsets" minX="-12" minY="0.0" maxX="0.0" maxY="0.0"/>
+                        <inset key="imageEdgeInsets" minX="-22" minY="0.0" maxX="0.0" maxY="0.0"/>
+                        <state key="normal" title="1" image="item-btn-like-white-act">
+                            <color key="titleColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </state>
+                    </button>
+                    <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qXb-hX-W8a">
+                        <rect key="frame" x="10" y="92.5" width="48" height="50"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                        <color key="tintColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <inset key="titleEdgeInsets" minX="-12" minY="0.0" maxX="0.0" maxY="0.0"/>
+                        <inset key="imageEdgeInsets" minX="-22" minY="0.0" maxX="0.0" maxY="0.0"/>
+                        <state key="normal" title="1" image="item-btn-comment-white-act">
+                            <color key="titleColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </state>
+                    </button>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="Pef-vu-WI4" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="883-Bo-coi"/>
+                    <constraint firstItem="qXb-hX-W8a" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="BPN-2y-5EE"/>
+                    <constraint firstAttribute="bottom" secondItem="fET-VL-edU" secondAttribute="bottom" constant="10" id="BsG-sw-EN6"/>
+                    <constraint firstItem="Pef-vu-WI4" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="15" id="LZL-Nn-mc4"/>
+                    <constraint firstItem="M37-Zd-yLE" firstAttribute="leading" secondItem="qXb-hX-W8a" secondAttribute="trailing" constant="10" id="OQv-du-HN4"/>
+                    <constraint firstItem="9bU-Gt-deW" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="RaB-I0-F9r"/>
+                    <constraint firstAttribute="trailing" secondItem="9bU-Gt-deW" secondAttribute="trailing" constant="10" id="SKI-au-7nS"/>
+                    <constraint firstAttribute="trailing" secondItem="fET-VL-edU" secondAttribute="trailing" constant="10" id="YbF-mA-kcY"/>
+                    <constraint firstItem="M37-Zd-yLE" firstAttribute="centerY" secondItem="fET-VL-edU" secondAttribute="centerY" id="dWH-tt-b8l"/>
+                    <constraint firstItem="M37-Zd-yLE" firstAttribute="top" secondItem="9bU-Gt-deW" secondAttribute="bottom" constant="10" id="gfT-im-6uc"/>
+                    <constraint firstItem="qXb-hX-W8a" firstAttribute="centerY" secondItem="M37-Zd-yLE" secondAttribute="centerY" id="kK3-Cl-Fci"/>
+                    <constraint firstItem="9bU-Gt-deW" firstAttribute="top" secondItem="Pef-vu-WI4" secondAttribute="bottom" constant="10" id="mHo-0i-m0d"/>
+                    <constraint firstAttribute="trailing" secondItem="Pef-vu-WI4" secondAttribute="trailing" constant="10" id="z6Z-Tp-ncY"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="aW0-zy-SZf"/>
+            <connections>
+                <outlet property="commentButton" destination="qXb-hX-W8a" id="NP8-LT-Wio"/>
+                <outlet property="contentLabel" destination="9bU-Gt-deW" id="wAV-YI-Zm3"/>
+                <outlet property="likeButton" destination="M37-Zd-yLE" id="q0n-vb-LyS"/>
+                <outlet property="timeLabel" destination="fET-VL-edU" id="6Hm-9m-QTv"/>
+                <outlet property="titleLabel" destination="Pef-vu-WI4" id="veZ-lG-Ncw"/>
+            </connections>
+            <point key="canvasLocation" x="57" y="191"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="item-btn-comment-white-act" width="42" height="50"/>
+        <image name="item-btn-like-white-act" width="48" height="50"/>
+    </resources>
+</document>

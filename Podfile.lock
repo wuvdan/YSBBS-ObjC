@@ -1,0 +1,83 @@
+PODS:
+  - AFNetworking (3.2.1):
+    - AFNetworking/NSURLSession (= 3.2.1)
+    - AFNetworking/Reachability (= 3.2.1)
+    - AFNetworking/Security (= 3.2.1)
+    - AFNetworking/Serialization (= 3.2.1)
+    - AFNetworking/UIKit (= 3.2.1)
+  - AFNetworking/NSURLSession (3.2.1):
+    - AFNetworking/Reachability
+    - AFNetworking/Security
+    - AFNetworking/Serialization
+  - AFNetworking/Reachability (3.2.1)
+  - AFNetworking/Security (3.2.1)
+  - AFNetworking/Serialization (3.2.1)
+  - AFNetworking/UIKit (3.2.1):
+    - AFNetworking/NSURLSession
+  - Bugly (2.5.0)
+  - DZNEmptyDataSet (1.8.1)
+  - FCXRefresh (0.1.1)
+  - FLAnimatedImage (1.0.12)
+  - FMDB (2.7.5):
+    - FMDB/standard (= 2.7.5)
+  - FMDB/standard (2.7.5)
+  - IQKeyboardManager (6.1.1)
+  - Masonry (1.1.0)
+  - MFHUDManager (0.1.5)
+  - MJExtension (3.0.15.1)
+  - SDWebImage (4.4.2):
+    - SDWebImage/Core (= 4.4.2)
+  - SDWebImage/Core (4.4.2)
+  - SDWebImage/GIF (4.4.2):
+    - FLAnimatedImage (~> 1.0)
+    - SDWebImage/Core
+  - WDNavigationBar (0.0.2):
+    - Masonry
+
+DEPENDENCIES:
+  - AFNetworking
+  - Bugly
+  - DZNEmptyDataSet
+  - FCXRefresh
+  - FLAnimatedImage
+  - FMDB
+  - IQKeyboardManager
+  - Masonry
+  - MFHUDManager
+  - MJExtension
+  - SDWebImage
+  - SDWebImage/GIF
+  - WDNavigationBar
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - AFNetworking
+    - Bugly
+    - DZNEmptyDataSet
+    - FCXRefresh
+    - FLAnimatedImage
+    - FMDB
+    - IQKeyboardManager
+    - Masonry
+    - MFHUDManager
+    - MJExtension
+    - SDWebImage
+    - WDNavigationBar
+
+SPEC CHECKSUMS:
+  AFNetworking: b6f891fdfaed196b46c7a83cf209e09697b94057
+  Bugly: 3ca9f255c01025582df26f9222893b383c7e4b4e
+  DZNEmptyDataSet: 9525833b9e68ac21c30253e1d3d7076cc828eaa7
+  FCXRefresh: 80eec201bd310e92934a102533d099e08ab546fc
+  FLAnimatedImage: 4a0b56255d9b05f18b6dd7ee06871be5d3b89e31
+  FMDB: 2ce00b547f966261cd18927a3ddb07cb6f3db82a
+  IQKeyboardManager: 79c57795f5c2408d259d37b9da2ed07efcbb5225
+  Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
+  MFHUDManager: 7b359671b0042d94cce27e94d3d3bca2a3f0f39e
+  MJExtension: 19bc33ce2eee2d319760f5622562cf581a6ff756
+  SDWebImage: 624d6e296c69b244bcede364c72ae0430ac14681
+  WDNavigationBar: 95ca40082049f2a7032c1c55525ad43765a3c24f
+
+PODFILE CHECKSUM: 875f39dd33a7188d99215de37262737edd3a74fa
+
+COCOAPODS: 1.5.3
