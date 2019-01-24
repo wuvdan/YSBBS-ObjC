@@ -251,7 +251,7 @@ static BBSNetworkTool *_instance;
                                                 parameterDic:postDic
                                          requsetSuccessBlock:^(id  _Nonnull obj) {
                                              aSuccessBlock(obj);
-                                             [[LZRemindBar configurationWithStyle:RemindBarStyleInfo showPosition:RemindBarPositionNavigationBar contentText:@"发布成功"] showBarAfterTimeInterval:1.2];
+                                             [[LZRemindBar configurationWithStyle:RemindBarStyleInfo showPosition:RemindBarPositionStatusBar contentText:@"发布成功"] showBarAfterTimeInterval:1.2];
 
                                          } requsetFailBlock:^(id  _Nonnull obj) {
                                              [self handlerFailDataDic:obj];
@@ -432,7 +432,7 @@ static BBSNetworkTool *_instance;
     
     if ([dataDic isKindOfClass:[NSDictionary class]]) {
         [[LZRemindBar configurationWithStyle:RemindBarStyleError
-                                showPosition:RemindBarPositionNavigationBar
+                                showPosition:RemindBarPositionStatusBar
                                  contentText:dataDic[@"msg"]]
          showBarAfterTimeInterval:1.2];
         
@@ -457,7 +457,7 @@ static BBSNetworkTool *_instance;
 #pragma mark  登录成功数据处理 
 - (void)loginSuccessWithDataDic:(NSDictionary *)dataDic account:(NSString *)aAccount{
     [[LZRemindBar configurationWithStyle:RemindBarStyleInfo
-                            showPosition:RemindBarPositionNavigationBar
+                            showPosition:RemindBarPositionStatusBar
                              contentText:@"登录成功"]
      showBarAfterTimeInterval:1.2];
     
