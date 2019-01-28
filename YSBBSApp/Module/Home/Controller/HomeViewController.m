@@ -163,7 +163,6 @@
         cell = [[NSBundle mainBundle] loadNibNamed:@"ArticleTableViewCell" owner:self options:nil].firstObject;
     }
     cell.delegate = self;
-    
     cell.model = self.modelArray[indexPath.section];
     return cell;
 }
@@ -268,7 +267,6 @@
 
 #pragma mark - NetWork Request
 - (void)getListOfUserPostWithPageNo:(NSInteger)pageNo {
-    NSLog(@"--------------%ld", pageNo);
     [[BBSNetworkTool shareInstance] getPostListPageSize:@"10" pageNo:pageNo successBlock:^(id  _Nonnull obj) {
         if (pageNo == 1) {
             [[DataBaseTools manager] clearDataFromTableName:HomeListTable];
@@ -280,8 +278,6 @@
                     
                 }];
             }
-            [self readFromFMDB];
-
             [self.refreshHeaderView endRefresh];
         } else {
             for (NSDictionary *dic in obj[@"data"][@"list"]) {
@@ -292,10 +288,9 @@
                     
                 }];
             }
-            [self readFromFMDB];
-
             [self.refreshFooterView endRefresh];
         }
+        [self readFromFMDB];
         self.totalElements = [obj[@"data"][@"totalElements"] doubleValue];
         [self.tableView reloadData];
     } failBlock:^{

@@ -9,7 +9,18 @@
 /* Begin PBXBuildFile section */
 		4812F24921F1660000842091 /* LZRemindBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 4812F24821F1660000842091 /* LZRemindBar.m */; };
 		4812F24D21F16DC900842091 /* LZAlterView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4812F24C21F16DC900842091 /* LZAlterView.m */; };
+		48496D9021FA9918006D4D13 /* AppDelegate+Socket.m in Sources */ = {isa = PBXBuildFile; fileRef = 48496D8F21FA9918006D4D13 /* AppDelegate+Socket.m */; };
+		48496D9321FA99DC006D4D13 /* SocketManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 48496D9221FA99DC006D4D13 /* SocketManager.m */; };
+		48496D9621FA9E2E006D4D13 /* MessageListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 48496D9521FA9E2E006D4D13 /* MessageListViewController.m */; };
+		48496D9B21FAA30F006D4D13 /* MessageTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 48496D9921FAA30F006D4D13 /* MessageTableViewCell.m */; };
+		48496D9F21FAAE7B006D4D13 /* MessageMode.m in Sources */ = {isa = PBXBuildFile; fileRef = 48496D9E21FAAE7B006D4D13 /* MessageMode.m */; };
+		48496DA221FAB950006D4D13 /* MessageInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 48496DA121FAB950006D4D13 /* MessageInfoViewController.m */; };
+		48496DA521FABB9A006D4D13 /* MessageInfoTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 48496DA421FABB9A006D4D13 /* MessageInfoTableViewCell.m */; };
+		48496DA821FABD0C006D4D13 /* MessageInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 48496DA721FABD0C006D4D13 /* MessageInfo.m */; };
+		48496DAB21FABFA2006D4D13 /* MessageTimeView.m in Sources */ = {isa = PBXBuildFile; fileRef = 48496DAA21FABFA2006D4D13 /* MessageTimeView.m */; };
+		48496DAE21FAD8ED006D4D13 /* SocketUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 48496DAD21FAD8ED006D4D13 /* SocketUtils.m */; };
 		48554CF121F5A4C5004DD479 /* WudanHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 48554CF021F5A4C5004DD479 /* WudanHUD.m */; };
+		4859201621FE9642008E435E /* PostArticleNetManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 4859201521FE9642008E435E /* PostArticleNetManager.m */; };
 		48613DE2219BA70600CE491F /* PostArticleController.m in Sources */ = {isa = PBXBuildFile; fileRef = 48613DE1219BA70600CE491F /* PostArticleController.m */; };
 		48613DE5219BA81100CE491F /* PostArticleTextFieldCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 48613DE4219BA81100CE491F /* PostArticleTextFieldCell.m */; };
 		48613DE8219BAB6E00CE491F /* PostArticleTextViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 48613DE7219BAB6E00CE491F /* PostArticleTextViewCell.m */; };
@@ -86,6 +97,8 @@
 		48D01A21212FE97D00FC542F /* RegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 48D01A20212FE97D00FC542F /* RegisterViewController.m */; };
 		48D01A25212FECF800FC542F /* ForgetPasswordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 48D01A24212FECF800FC542F /* ForgetPasswordViewController.m */; };
 		48D01A29212FFD4100FC542F /* UITextField+Limit.m in Sources */ = {isa = PBXBuildFile; fileRef = 48D01A28212FFD4100FC542F /* UITextField+Limit.m */; };
+		48D3F34721FAEACC00B011CB /* WDWebSoketManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 48D3F34621FAEACC00B011CB /* WDWebSoketManager.m */; };
+		48D3F34A21FAED7F00B011CB /* LZSystemSDKManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 48D3F34921FAED7F00B011CB /* LZSystemSDKManager.m */; };
 		48D5705721355FEB004A9095 /* CommentModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 48D5705621355FEB004A9095 /* CommentModel.m */; };
 		48D5705A21356146004A9095 /* CommentTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 48D5705921356146004A9095 /* CommentTableViewCell.m */; };
 		48D5E0FE21314FAD00FC3B8F /* SelectCategoryView.m in Sources */ = {isa = PBXBuildFile; fileRef = 48D5E0FC21314FAD00FC3B8F /* SelectCategoryView.m */; };
@@ -111,10 +124,32 @@
 		4812F24B21F16DC900842091 /* LZAlterView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LZAlterView.h; sourceTree = "<group>"; };
 		4812F24C21F16DC900842091 /* LZAlterView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LZAlterView.m; sourceTree = "<group>"; };
 		482F906E216070BD006521BD /* UtilsManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UtilsManager.h; sourceTree = "<group>"; };
+		48496D8E21FA9918006D4D13 /* AppDelegate+Socket.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "AppDelegate+Socket.h"; sourceTree = "<group>"; };
+		48496D8F21FA9918006D4D13 /* AppDelegate+Socket.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "AppDelegate+Socket.m"; sourceTree = "<group>"; };
+		48496D9121FA99DC006D4D13 /* SocketManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SocketManager.h; sourceTree = "<group>"; };
+		48496D9221FA99DC006D4D13 /* SocketManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SocketManager.m; sourceTree = "<group>"; };
+		48496D9421FA9E2E006D4D13 /* MessageListViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MessageListViewController.h; sourceTree = "<group>"; };
+		48496D9521FA9E2E006D4D13 /* MessageListViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MessageListViewController.m; sourceTree = "<group>"; };
+		48496D9821FAA30F006D4D13 /* MessageTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MessageTableViewCell.h; sourceTree = "<group>"; };
+		48496D9921FAA30F006D4D13 /* MessageTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MessageTableViewCell.m; sourceTree = "<group>"; };
+		48496D9D21FAAE7B006D4D13 /* MessageMode.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MessageMode.h; sourceTree = "<group>"; };
+		48496D9E21FAAE7B006D4D13 /* MessageMode.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MessageMode.m; sourceTree = "<group>"; };
+		48496DA021FAB950006D4D13 /* MessageInfoViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MessageInfoViewController.h; sourceTree = "<group>"; };
+		48496DA121FAB950006D4D13 /* MessageInfoViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MessageInfoViewController.m; sourceTree = "<group>"; };
+		48496DA321FABB9A006D4D13 /* MessageInfoTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MessageInfoTableViewCell.h; sourceTree = "<group>"; };
+		48496DA421FABB9A006D4D13 /* MessageInfoTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MessageInfoTableViewCell.m; sourceTree = "<group>"; };
+		48496DA621FABD0C006D4D13 /* MessageInfo.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MessageInfo.h; sourceTree = "<group>"; };
+		48496DA721FABD0C006D4D13 /* MessageInfo.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MessageInfo.m; sourceTree = "<group>"; };
+		48496DA921FABFA2006D4D13 /* MessageTimeView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MessageTimeView.h; sourceTree = "<group>"; };
+		48496DAA21FABFA2006D4D13 /* MessageTimeView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MessageTimeView.m; sourceTree = "<group>"; };
+		48496DAC21FAD8ED006D4D13 /* SocketUtils.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SocketUtils.h; sourceTree = "<group>"; };
+		48496DAD21FAD8ED006D4D13 /* SocketUtils.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SocketUtils.m; sourceTree = "<group>"; };
 		48554CEF21F5A4C5004DD479 /* WudanHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WudanHUD.h; sourceTree = "<group>"; };
 		48554CF021F5A4C5004DD479 /* WudanHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WudanHUD.m; sourceTree = "<group>"; };
 		48554CF221F5B48A004DD479 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Main.strings"; sourceTree = "<group>"; };
 		48554CF321F5B48A004DD479 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
+		4859201421FE9642008E435E /* PostArticleNetManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PostArticleNetManager.h; sourceTree = "<group>"; };
+		4859201521FE9642008E435E /* PostArticleNetManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PostArticleNetManager.m; sourceTree = "<group>"; };
 		48613DE0219BA70600CE491F /* PostArticleController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PostArticleController.h; sourceTree = "<group>"; };
 		48613DE1219BA70600CE491F /* PostArticleController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PostArticleController.m; sourceTree = "<group>"; };
 		48613DE3219BA81100CE491F /* PostArticleTextFieldCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PostArticleTextFieldCell.h; sourceTree = "<group>"; };
@@ -262,6 +297,11 @@
 		48D01A24212FECF800FC542F /* ForgetPasswordViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ForgetPasswordViewController.m; sourceTree = "<group>"; };
 		48D01A27212FFD4100FC542F /* UITextField+Limit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UITextField+Limit.h"; sourceTree = "<group>"; };
 		48D01A28212FFD4100FC542F /* UITextField+Limit.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UITextField+Limit.m"; sourceTree = "<group>"; };
+		48D3F34521FAEACC00B011CB /* WDWebSoketManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WDWebSoketManager.h; sourceTree = "<group>"; };
+		48D3F34621FAEACC00B011CB /* WDWebSoketManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WDWebSoketManager.m; sourceTree = "<group>"; };
+		48D3F34821FAED7F00B011CB /* LZSystemSDKManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LZSystemSDKManager.h; sourceTree = "<group>"; };
+		48D3F34921FAED7F00B011CB /* LZSystemSDKManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LZSystemSDKManager.m; sourceTree = "<group>"; };
+		48D3F34B21FAEFEB00B011CB /* YSBBSApp.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = YSBBSApp.entitlements; sourceTree = "<group>"; };
 		48D5705521355FEB004A9095 /* CommentModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CommentModel.h; sourceTree = "<group>"; };
 		48D5705621355FEB004A9095 /* CommentModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CommentModel.m; sourceTree = "<group>"; };
 		48D5705821356146004A9095 /* CommentTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CommentTableViewCell.h; sourceTree = "<group>"; };
@@ -326,6 +366,27 @@
 				4812F24C21F16DC900842091 /* LZAlterView.m */,
 			);
 			path = LZAlterView;
+			sourceTree = "<group>";
+		};
+		48496D9721FA9E34006D4D13 /* Message */ = {
+			isa = PBXGroup;
+			children = (
+				48496D9421FA9E2E006D4D13 /* MessageListViewController.h */,
+				48496D9521FA9E2E006D4D13 /* MessageListViewController.m */,
+				48496DA321FABB9A006D4D13 /* MessageInfoTableViewCell.h */,
+				48496DA421FABB9A006D4D13 /* MessageInfoTableViewCell.m */,
+				48496DA921FABFA2006D4D13 /* MessageTimeView.h */,
+				48496DAA21FABFA2006D4D13 /* MessageTimeView.m */,
+				48496DA021FAB950006D4D13 /* MessageInfoViewController.h */,
+				48496DA121FAB950006D4D13 /* MessageInfoViewController.m */,
+				48496D9821FAA30F006D4D13 /* MessageTableViewCell.h */,
+				48496D9921FAA30F006D4D13 /* MessageTableViewCell.m */,
+				48496D9D21FAAE7B006D4D13 /* MessageMode.h */,
+				48496D9E21FAAE7B006D4D13 /* MessageMode.m */,
+				48496DA621FABD0C006D4D13 /* MessageInfo.h */,
+				48496DA721FABD0C006D4D13 /* MessageInfo.m */,
+			);
+			path = Message;
 			sourceTree = "<group>";
 		};
 		48617AFA212FCB8A00F84819 /* Category */ = {
@@ -498,6 +559,8 @@
 				489C51012130159400219665 /* BBSNetworkTool.m */,
 				489C511221311F1B00219665 /* WDNetWorkingTool.h */,
 				489C511321311F1B00219665 /* WDNetWorkingTool.m */,
+				4859201421FE9642008E435E /* PostArticleNetManager.h */,
+				4859201521FE9642008E435E /* PostArticleNetManager.m */,
 			);
 			path = NetWorkingTools;
 			sourceTree = "<group>";
@@ -605,6 +668,7 @@
 		48B0F411212E8E7D00E28310 /* YSBBSApp */ = {
 			isa = PBXGroup;
 			children = (
+				48D3F34B21FAEFEB00B011CB /* YSBBSApp.entitlements */,
 				489C51172131230300219665 /* Utils */,
 				48B0F42A212E8ECB00E28310 /* AppConfig */,
 				48B0F430212E954F00E28310 /* AppDelgate */,
@@ -646,8 +710,18 @@
 			children = (
 				48B0F412212E8E7D00E28310 /* AppDelegate.h */,
 				48B0F413212E8E7D00E28310 /* AppDelegate.m */,
+				48D3F34821FAED7F00B011CB /* LZSystemSDKManager.h */,
+				48D3F34921FAED7F00B011CB /* LZSystemSDKManager.m */,
 				48B0F42D212E93FA00E28310 /* AppDelegate+Initialization.h */,
 				48B0F42E212E93FA00E28310 /* AppDelegate+Initialization.m */,
+				48496D8E21FA9918006D4D13 /* AppDelegate+Socket.h */,
+				48496D8F21FA9918006D4D13 /* AppDelegate+Socket.m */,
+				48496D9121FA99DC006D4D13 /* SocketManager.h */,
+				48496D9221FA99DC006D4D13 /* SocketManager.m */,
+				48496DAC21FAD8ED006D4D13 /* SocketUtils.h */,
+				48496DAD21FAD8ED006D4D13 /* SocketUtils.m */,
+				48D3F34521FAEACC00B011CB /* WDWebSoketManager.h */,
+				48D3F34621FAEACC00B011CB /* WDWebSoketManager.m */,
 			);
 			path = AppDelgate;
 			sourceTree = "<group>";
@@ -672,6 +746,7 @@
 				48D5E0FB21314F3A00FC3B8F /* Post */,
 				488D6EE2213382B600FDE1EB /* UserInfo */,
 				48B5F12E21352F00008AA953 /* PostDetail */,
+				48496D9721FA9E34006D4D13 /* Message */,
 			);
 			path = Module;
 			sourceTree = "<group>";
@@ -907,6 +982,14 @@
 				TargetAttributes = {
 					48B0F40E212E8E7D00E28310 = {
 						CreatedOnToolsVersion = 9.4.1;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+							com.apple.Push = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -1010,6 +1093,7 @@
 				48617AF9212FCB8500F84819 /* UILabel+Create.m in Sources */,
 				48B5F12D21352EFC008AA953 /* PostDetailViewController.m in Sources */,
 				48D699F0219CFB6100D158D0 /* NSDate+date.m in Sources */,
+				48D3F34721FAEACC00B011CB /* WDWebSoketManager.m in Sources */,
 				48613DE8219BAB6E00CE491F /* PostArticleTextViewCell.m in Sources */,
 				48B0F417212E8E7D00E28310 /* ViewController.m in Sources */,
 				48613DE2219BA70600CE491F /* PostArticleController.m in Sources */,
@@ -1020,17 +1104,22 @@
 				48A8E5F821E0929800BF6C2A /* XG_MediaBrowseView.m in Sources */,
 				48D69A15219D0BD500D158D0 /* WDPageSegmentView.m in Sources */,
 				48B0F433212E958900E28310 /* BaseViewController.m in Sources */,
+				48496D9021FA9918006D4D13 /* AppDelegate+Socket.m in Sources */,
 				48D69A16219D0BD500D158D0 /* WDPageViewController.m in Sources */,
 				48A8E5F921E0929800BF6C2A /* XG_MediaCell.m in Sources */,
+				48D3F34A21FAED7F00B011CB /* LZSystemSDKManager.m in Sources */,
 				48D01A1A212FD72100FC542F /* UtilsManager.m in Sources */,
+				48496D9F21FAAE7B006D4D13 /* MessageMode.m in Sources */,
 				48613DEE219BBD2700CE491F /* PostArticleToolView.m in Sources */,
 				48A8E60221E0929800BF6C2A /* XG_TitleView.m in Sources */,
 				48617AFE212FCE1900F84819 /* UIView+Create.m in Sources */,
 				48D01A1D212FD85000FC542F /* UIButton+Create.m in Sources */,
 				48D01A25212FECF800FC542F /* ForgetPasswordViewController.m in Sources */,
+				48496DA821FABD0C006D4D13 /* MessageInfo.m in Sources */,
 				48B5F13D21354071008AA953 /* PostCommentToolView.m in Sources */,
 				488D6F052133FBC400FDE1EB /* UserPostModel.m in Sources */,
 				48A8E5F421E0929800BF6C2A /* XG_RootViewController.m in Sources */,
+				48496DAB21FABFA2006D4D13 /* MessageTimeView.m in Sources */,
 				48D01A29212FFD4100FC542F /* UITextField+Limit.m in Sources */,
 				48CBEB6621F04A9B00A1426F /* ELPhotoBrowserCollectionViewCell.m in Sources */,
 				48A8E60021E0929800BF6C2A /* XG_AssetPickerController.m in Sources */,
@@ -1040,14 +1129,18 @@
 				48A8E5FF21E0929800BF6C2A /* XG_AssetPickerManager.m in Sources */,
 				48B0F437212E9B5000E28310 /* LoginViewController.m in Sources */,
 				48CBEB6A21F04A9B00A1426F /* ELPhotoBrowserView.m in Sources */,
+				48496D9621FA9E2E006D4D13 /* MessageListViewController.m in Sources */,
 				489534EE219E873700AFDBF8 /* DataBaseTools.m in Sources */,
 				48D01A21212FE97D00FC542F /* RegisterViewController.m in Sources */,
 				48A8E60121E0929800BF6C2A /* XG_AlbumModel.m in Sources */,
 				488D6EF121339FAC00FDE1EB /* WDImagePicker.m in Sources */,
+				4859201621FE9642008E435E /* PostArticleNetManager.m in Sources */,
+				48496DAE21FAD8ED006D4D13 /* SocketUtils.m in Sources */,
 				48617AF6212FC94700F84819 /* WDInputView.m in Sources */,
 				48613DE5219BA81100CE491F /* PostArticleTextFieldCell.m in Sources */,
 				48CBEB6721F04A9B00A1426F /* ELPhotoListModel.m in Sources */,
 				48D5E0FE21314FAD00FC3B8F /* SelectCategoryView.m in Sources */,
+				48496D9321FA99DC006D4D13 /* SocketManager.m in Sources */,
 				48CBEB6521F04A9B00A1426F /* ELBrowserConfig.m in Sources */,
 				48A8E5F621E0929800BF6C2A /* XG_AssetModel.m in Sources */,
 				48CBEB4C21F0272000A1426F /* PostArticleImageCollectionViewTableViewCell.m in Sources */,
@@ -1067,7 +1160,9 @@
 				488D6EE1213382AE00FDE1EB /* UserInfoViewController.m in Sources */,
 				48D69A3C219D437200D158D0 /* PostArticleDetailCell.m in Sources */,
 				48CBEB7221F04EE200A1426F /* UIScrollView+Addition.m in Sources */,
+				48496D9B21FAA30F006D4D13 /* MessageTableViewCell.m in Sources */,
 				48613DF1219BCA1C00CE491F /* UIImage+Addition.m in Sources */,
+				48496DA521FABB9A006D4D13 /* MessageInfoTableViewCell.m in Sources */,
 				48A8E5F521E0929800BF6C2A /* XG_BarButton.m in Sources */,
 				4812F24D21F16DC900842091 /* LZAlterView.m in Sources */,
 				489C510F2131080800219665 /* HomeViewController.m in Sources */,
@@ -1084,6 +1179,7 @@
 				48554CF121F5A4C5004DD479 /* WudanHUD.m in Sources */,
 				48D69A21219D1AB500D158D0 /* UserListArticleCell.m in Sources */,
 				48613DF5219BEB6400CE491F /* ArticleTableViewCell.m in Sources */,
+				48496DA221FAB950006D4D13 /* MessageInfoViewController.m in Sources */,
 				488D6EEA21338BBA00FDE1EB /* UserInfoTableViewCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1229,6 +1325,7 @@
 			baseConfigurationReference = 13E98CE0A8231216BDCFB72C /* Pods-YSBBSApp.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = YSBBSApp/YSBBSApp.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 3VBRJ4R5T9;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/YSBBSApp/AppConfig/BBSPrefixHeader.pch";
@@ -1249,6 +1346,7 @@
 			baseConfigurationReference = 5AC5021A8DBD0BAA980286E6 /* Pods-YSBBSApp.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = YSBBSApp/YSBBSApp.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 3VBRJ4R5T9;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/YSBBSApp/AppConfig/BBSPrefixHeader.pch";

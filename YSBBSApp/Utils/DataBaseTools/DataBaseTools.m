@@ -122,13 +122,11 @@ static char *wd_id_key = "key";
 }
 
 - (void)clearDataFromTableName:(NSString *)tableName {
-    for (NSObject *model in [self queryAllDataWithTableName:tableName]) {
-        [self deleteDataWithTableName:tableName uid:model.wd_fmdb_id successBlock:^{
-            
-        } failBlock:^{
-            
-        }];
-    }
+
+ 
+    [self dropTable:tableName];
+    [self createTableWithName:tableName];
+    
 }
 
 - (void)likeFromTableName:(NSString *)tableName model:(NSObject *)model id:(NSInteger)aId successBlock:(successBlock)aSuccessBlock failBlock:(failBlock)aFailBlock {

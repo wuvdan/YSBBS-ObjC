@@ -56,6 +56,12 @@ NSString * const likeCommentAPI           = @"topicCommentLike/add";
 
 NSString * const cancelLikeCommentAPI     = @"topicCommentLike/del";
 
+NSString * const getMessageListAPI        = @"message/list";
+
+NSString * const getMessageDetailAPI      = @"message/get";
+
+NSString * const getRemoteNotification    = @"/websocket";
+
 NSString * const modifyPassword           = @"user/modifyPwd";
 
 NSString * const HomeListTable            = @"HomeListTable";

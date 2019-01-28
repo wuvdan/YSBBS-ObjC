@@ -19,7 +19,7 @@
                 <rect key="frame" x="0.0" y="0.0" width="207" height="148"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
-                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="50s-M4-ihb" customClass="FLAnimatedImageView" customModule="YSBBSApp" customModuleProvider="target">
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="50s-M4-ihb">
                         <rect key="frame" x="8" y="8" width="191" height="132"/>
                     </imageView>
                 </subviews>

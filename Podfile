@@ -23,4 +23,11 @@ pod 'SDWebImage/GIF'
 pod 'IQKeyboardManager'
 
 pod 'FMDB'
+pod 'CocoaAsyncSocket'
+
+pod 'SocketRocket'
+
+pod 'WHDebugTool', '~> 1.7'
+
+
 end

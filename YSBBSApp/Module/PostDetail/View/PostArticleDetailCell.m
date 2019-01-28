@@ -179,8 +179,6 @@
 
 - (void)awakeFromNib {
     [super awakeFromNib];
-    self.layer.cornerRadius = 10;
-    self.layer.masksToBounds = YES;
     self.headerImageView.layer.cornerRadius = self.headerImageView.frame.size.width/2;
     self.headerImageView.layer.masksToBounds = YES;
     self.collectionView.delegate = self;

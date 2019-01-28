@@ -15,6 +15,7 @@
 #import "XG_AssetModel.h"
 #import "XG_AssetPickerManager.h"
 #import "LZRemindBar.h"
+#import "PostArticleNetManager.h"
 
 @interface PostArticleController ()<TextViewCellDelegate,
                                     PostArticleTextFieldCellDelegate>
@@ -92,25 +93,44 @@
 - (void)postTopicWithTitle:(NSString *)title contentText:(NSString *)content {
     
     [[LZRemindBar configurationWithStyle:RemindBarStyleWarn showPosition:RemindBarPositionStatusBar contentText:@"正在上传，请耐心等候"] showBarAfterTimeInterval:1.2];
+    
     [self.navigationController popViewControllerAnimated:true];
 
+    /// 发布帖子没有图片的
     if (self.imageModelArray.count == 0) {
-        [[BBSNetworkTool shareInstance] addPostWithTitle:title contentText:content imageSting:@"" successBlock:^(id  _Nonnull obj) {
+        NSDictionary *dic = @{@"title":title,
+                              @"content":content};
+        
+        [[PostArticleNetManager shareInstance] getRequestWithParameterDictionary:dic requsetSuccessBlock:^(id  _Nonnull obj) {
             if (self.publicResultHandler) {
                 self.publicResultHandler(true);
             }
+        } requsetFailBlock:^(id  _Nonnull obj) {
+            [[LZRemindBar configurationWithStyle:RemindBarStyleError showPosition:RemindBarPositionStatusBar contentText:@"发布失败~"] showBarAfterTimeInterval:1.2];
         }];
-    } else {
+        
+    } else { /// 发布帖子有图片的
         
         dispatch_queue_t serialQueue = dispatch_queue_create("serialQueue", DISPATCH_QUEUE_SERIAL);
         dispatch_async(serialQueue, ^{
-            [[BBSNetworkTool shareInstance] postImageUpLoadWithImageArray:[self getImageArray] successBlock:^(id  _Nonnull obj) {
+            
+            [[PostArticleNetManager shareInstance] multPictureUploadWithImagesArray:[self getImageArray] requsetSuccessBlock:^(id  _Nonnull obj) {
+                
                 NSArray *imageArray = obj[@"data"];
-                [[BBSNetworkTool shareInstance] addPostWithTitle:title contentText:content imageSting:[NSString stringWithFormat:@"%@",[imageArray componentsJoinedByString:@","]] successBlock:^(id  _Nonnull obj) {
+                
+                NSDictionary *dic = @{@"title":title,
+                                      @"content":content,
+                                      @"img":[NSString stringWithFormat:@"%@",[imageArray componentsJoinedByString:@","]]};
+                
+                [[PostArticleNetManager shareInstance] getRequestWithParameterDictionary:dic requsetSuccessBlock:^(id  _Nonnull obj) {
                     if (self.publicResultHandler) {
                         self.publicResultHandler(true);
                     }
+                } requsetFailBlock:^(id  _Nonnull obj) {
+                     [[LZRemindBar configurationWithStyle:RemindBarStyleError showPosition:RemindBarPositionStatusBar contentText:@"发布失败~"] showBarAfterTimeInterval:1.2];
                 }];
+            } requsetFailBlock:^(id  _Nonnull obj) {
+                [[LZRemindBar configurationWithStyle:RemindBarStyleError showPosition:RemindBarPositionStatusBar contentText:@"图片上传失败，请稍后重试~"] showBarAfterTimeInterval:1.2];
             }];
         });
     }

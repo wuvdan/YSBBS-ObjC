@@ -8,8 +8,10 @@
 
 #import <Foundation/Foundation.h>
 
+// 腾讯Bugly key
 UIKIT_EXTERN NSString * const G_TencentBuglyKey;
 
+// 服务器IP
 UIKIT_EXTERN NSString * const G_Http_URL; 
 
 // 注册
@@ -77,6 +79,15 @@ UIKIT_EXTERN NSString * const likeCommentAPI;
 
 // 取消评论点赞
 UIKIT_EXTERN NSString * const cancelLikeCommentAPI;
+
+// 获取消息列表
+UIKIT_EXTERN NSString * const getMessageListAPI;
+
+// 获取消息详情
+UIKIT_EXTERN NSString * const getMessageDetailAPI;
+
+// Socket获取通知
+UIKIT_EXTERN NSString * const getRemoteNotification;
 
 // 修改密码
 UIKIT_EXTERN NSString * const modifyPassword;

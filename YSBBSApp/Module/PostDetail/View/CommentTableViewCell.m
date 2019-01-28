@@ -57,6 +57,8 @@
     self.headerImageView = [[UIImageView alloc] init];
     self.headerImageView.layer.cornerRadius = kRealWidthValue(30/2);
     self.headerImageView.layer.masksToBounds = true;
+    self.headerImageView.contentMode = UIViewContentModeScaleAspectFill;
+    self.headerImageView.clipsToBounds = true;
     [self.contentView addSubview:self.headerImageView];
     
     self.nickNameLabel = [[UILabel alloc] initWithText:@"" textColor:kMainGrey textFont:13 textAlignment:NSTextAlignmentLeft];

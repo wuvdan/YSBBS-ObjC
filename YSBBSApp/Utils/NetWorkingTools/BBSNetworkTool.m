@@ -427,6 +427,37 @@ static BBSNetworkTool *_instance;
                                          }];
 }
 
+- (void)getMessageWithPageNo:(NSInteger)pageNo successBlock:(void (^)(id _Nonnull))aSuccessBlock {
+    
+    [[WDNetWorkingTool shareInstance] requestWithManthMethod:RequsetMethodGet
+                                     requsetParameteLocation:RequsetParameterLocationHeader
+                                                  urlAddress:[NSString stringWithFormat:@"%@/%@",G_Http_URL,getMessageListAPI]
+                                             isShowIndicator:false
+                                                parameterDic:@{@"pageNo"   : [NSString stringWithFormat:@"%ld", (long)pageNo],
+                                                               @"pageSize" : @"10"}
+                                         requsetSuccessBlock:^(id  _Nonnull obj) {
+                                                    aSuccessBlock(obj);
+                                                } requsetFailBlock:^(id  _Nonnull obj) {
+                                                    [self handlerFailDataDic:obj];
+                                                }];
+    
+}
+
+- (void)getMessageWithId:(NSInteger)Id successBlock:(void (^)(id _Nonnull))aSuccessBlock {
+    
+    [[WDNetWorkingTool shareInstance] requestWithManthMethod:RequsetMethodGet
+                                     requsetParameteLocation:RequsetParameterLocationHeader
+                                                  urlAddress:[NSString stringWithFormat:@"%@/%@",G_Http_URL,getMessageDetailAPI]
+                                             isShowIndicator:true
+                                                parameterDic:@{@"messageId" : [NSString stringWithFormat:@"%ld", (long)Id]}
+                                         requsetSuccessBlock:^(id  _Nonnull obj) {
+                                              aSuccessBlock(obj);
+                                         } requsetFailBlock:^(id  _Nonnull obj) {
+                                             [self handlerFailDataDic:obj];
+                                         }];
+    
+}
+
 #pragma mark  处理请求错误数据 
 - (void)handlerFailDataDic:(NSDictionary *)dataDic {
     

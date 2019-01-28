@@ -11,7 +11,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface ArticleImageCollectionViewCell : UICollectionViewCell
 
-@property (weak, nonatomic) IBOutlet FLAnimatedImageView *imageView;
+@property (weak, nonatomic) IBOutlet UIImageView *imageView;
 @property (nonatomic, strong) NSString *imgUrlString;
 
 @end

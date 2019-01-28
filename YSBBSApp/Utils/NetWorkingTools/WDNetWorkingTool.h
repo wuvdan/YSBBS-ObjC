@@ -15,6 +15,7 @@ typedef NS_ENUM(NSInteger, RequsetMethod) {
     RequsetMethodGet = 1,
 };
 
+
 typedef NS_ENUM(NSInteger, RequsetParameterLocation) {
     RequsetParameterLocationBody = 0,
     RequsetParameterLocationHeader = 1,
@@ -27,8 +28,8 @@ typedef void (^RequsetFail)(id obj);
 
 + (instancetype)shareInstance;
 /**
- 网络请求
-
+ * 网络请求
+ *
  @param method 请求方式--POST/GET
  @param parameterLocation 参数位置
  @param url 接口
@@ -46,8 +47,8 @@ typedef void (^RequsetFail)(id obj);
               requsetFailBlock:(RequsetFail)failBlock;
 
 /**
- 单图上传
-
+ * 单图上传
+ *
  @param aUrl 地址
  @param aImage 图片
  @param showIndicator 显示loding视图
@@ -60,8 +61,8 @@ typedef void (^RequsetFail)(id obj);
                requsetSuccessBlock:(RequsetSuccess)successBlock
                   requsetFailBlock:(RequsetFail)failBlock;
 /**
- 单图上传
- 
+ * 单图上传
+ *
  @param aUrl 地址
  @param aImagesArray 图片数组
  @param showIndicator 显示loding视图

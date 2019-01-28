@@ -28,6 +28,7 @@
     [self setupNavigationBar];
     [self setupSubviews];
     [self setupSubviewsConstraints];
+    
 }
 
 #pragma mark - SetupNavigationBar
