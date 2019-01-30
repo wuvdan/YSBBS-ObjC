@@ -330,7 +330,7 @@ CLLocationManagerDelegate>
         if (error) {
             NSLog(@"%@本地推送 :( 报错 %@",identifier, error);
         } else {
-            NSLog(@"成功");
+            NSLog(@"推送添加成功");
         }
     }];
 }

@@ -19,6 +19,7 @@
 		48496DA821FABD0C006D4D13 /* MessageInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 48496DA721FABD0C006D4D13 /* MessageInfo.m */; };
 		48496DAB21FABFA2006D4D13 /* MessageTimeView.m in Sources */ = {isa = PBXBuildFile; fileRef = 48496DAA21FABFA2006D4D13 /* MessageTimeView.m */; };
 		48496DAE21FAD8ED006D4D13 /* SocketUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 48496DAD21FAD8ED006D4D13 /* SocketUtils.m */; };
+		4853041C2201672C00B155CD /* SocketRocketManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 4853041B2201672C00B155CD /* SocketRocketManager.m */; };
 		48554CF121F5A4C5004DD479 /* WudanHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 48554CF021F5A4C5004DD479 /* WudanHUD.m */; };
 		4859201621FE9642008E435E /* PostArticleNetManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 4859201521FE9642008E435E /* PostArticleNetManager.m */; };
 		48613DE2219BA70600CE491F /* PostArticleController.m in Sources */ = {isa = PBXBuildFile; fileRef = 48613DE1219BA70600CE491F /* PostArticleController.m */; };
@@ -144,6 +145,8 @@
 		48496DAA21FABFA2006D4D13 /* MessageTimeView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MessageTimeView.m; sourceTree = "<group>"; };
 		48496DAC21FAD8ED006D4D13 /* SocketUtils.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SocketUtils.h; sourceTree = "<group>"; };
 		48496DAD21FAD8ED006D4D13 /* SocketUtils.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SocketUtils.m; sourceTree = "<group>"; };
+		4853041A2201672C00B155CD /* SocketRocketManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SocketRocketManager.h; sourceTree = "<group>"; };
+		4853041B2201672C00B155CD /* SocketRocketManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SocketRocketManager.m; sourceTree = "<group>"; };
 		48554CEF21F5A4C5004DD479 /* WudanHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WudanHUD.h; sourceTree = "<group>"; };
 		48554CF021F5A4C5004DD479 /* WudanHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WudanHUD.m; sourceTree = "<group>"; };
 		48554CF221F5B48A004DD479 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Main.strings"; sourceTree = "<group>"; };
@@ -708,6 +711,8 @@
 		48B0F430212E954F00E28310 /* AppDelgate */ = {
 			isa = PBXGroup;
 			children = (
+				4853041A2201672C00B155CD /* SocketRocketManager.h */,
+				4853041B2201672C00B155CD /* SocketRocketManager.m */,
 				48B0F412212E8E7D00E28310 /* AppDelegate.h */,
 				48B0F413212E8E7D00E28310 /* AppDelegate.m */,
 				48D3F34821FAED7F00B011CB /* LZSystemSDKManager.h */,
@@ -1092,6 +1097,7 @@
 				489C51082130EC6B00219665 /* NetRequestLoading.m in Sources */,
 				48617AF9212FCB8500F84819 /* UILabel+Create.m in Sources */,
 				48B5F12D21352EFC008AA953 /* PostDetailViewController.m in Sources */,
+				4853041C2201672C00B155CD /* SocketRocketManager.m in Sources */,
 				48D699F0219CFB6100D158D0 /* NSDate+date.m in Sources */,
 				48D3F34721FAEACC00B011CB /* WDWebSoketManager.m in Sources */,
 				48613DE8219BAB6E00CE491F /* PostArticleTextViewCell.m in Sources */,

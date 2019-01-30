@@ -13,7 +13,7 @@
 #import "LZSystemSDKManager.h"
 #import <UserNotifications/UserNotifications.h>
 #import <WHDebugTool/WHDebugToolManager.h>
-
+#import "SocketRocketManager.h"
 
 @interface AppDelegate ()<WDWebSoketManagerDelegate, UNUserNotificationCenterDelegate>
 
@@ -50,15 +50,61 @@
 #else
     // do sth
 #endif
-  
     return YES;
 }
 
 - (void)startSocket {
     NSString *url = [NSString stringWithFormat:@"ws://118.31.12.178/%@/%@", getRemoteNotification, [DefaultsConfig objectForKey:G_Authorization]];
-    [[WDWebSoketManager manager] contactToSeverWithUrlAddress:url];
-    [WDWebSoketManager manager].delegate = self;
+//    [[WDWebSoketManager manager] contactToSeverWithUrlAddress:url];
+//    [WDWebSoketManager manager].delegate = self;
+    
+    [[SocketRocketManager instance] SRWebSocketOpenWithURLString:url];
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(SRWebSocketDidReceiveMsg:)
+                                                 name:kWebSocketdidReceiveMessageNote
+                                               object:nil];
+    
 }
+
+
+- (void)SRWebSocketDidReceiveMsg:(NSNotification *)note {
+    //收到服务端发送过来的消息
+    NSString * message = note.object;
+    NSLog(@"%@",message);
+    
+    NSDictionary *dic = [self dictionaryWithJsonString:message];
+    switch ([dic[@"code"] integerValue]) {
+        case 1:
+        {
+            if (@available(iOS 10.0, *)) {
+                [[LZSystemSDKManager manager] lz_pushNotification_IOS_10_Title:@"有推送啦~"
+                                                                      subtitle:@""
+                                                                          body:dic[@"msg"]
+                                                                    promptTone:@""
+                                                                     soundName:@""
+                                                                     imageName:@""
+                                                                     movieName:@""
+                                                                  timeInterval:30
+                                                                       repeats:false
+                                                                    Identifier:@"111"];
+            } else {
+                [[LZSystemSDKManager manager] lz_pushNotifationWithTimeInterval:5
+                                                                 repeatInterval:1
+                                                                      alertBody:dic[@"msg"]
+                                                                     alertTitle:@"提示"
+                                                                    alertAction:@"查看"
+                                                               alertLaunchImage:@""
+                                                                      soundName:@""
+                                                                       userInfo:dic];
+            }
+        }
+            break;
+            
+        default:
+            break;
+    }
+}
+
 
 //创建本地通知
 - (void)requestAuthor {
@@ -87,9 +133,7 @@
 }
 
 - (void)getMassageFromSeverWithInfo:(NSString *)info {
-    NSLog(@"%@", info);
     NSDictionary *dic = [self dictionaryWithJsonString:info];
-    
     switch ([dic[@"code"] integerValue]) {
         case 1:
         {
@@ -101,7 +145,7 @@
                                                                      soundName:@""
                                                                      imageName:@""
                                                                      movieName:@""
-                                                                  timeInterval:10
+                                                                  timeInterval:30
                                                                        repeats:false
                                                                     Identifier:@"111"];
             } else {
@@ -120,7 +164,6 @@
         default:
             break;
     }
-    
 }
 
 - (NSDictionary *)dictionaryWithJsonString:(NSString *)jsonString {
@@ -133,9 +176,7 @@
     NSDictionary *dic = [NSJSONSerialization JSONObjectWithData:jsonData
                                                         options:NSJSONReadingMutableContainers
                                                           error:&err];
-    if(err)
-    {
-        NSLog(@"json解析失败：%@",err);
+    if (err) {
         return nil;
     }
     return dic;
@@ -145,7 +186,6 @@
 - (void)applicationWillResignActive:(UIApplication *)application {
     NSLogInfo(@"APP即将进从前台退出");
 }
-
 
 - (void)applicationDidEnterBackground:(UIApplication *)application {
     NSLogInfo(@"APP已经进入后台");

@@ -71,7 +71,6 @@ static WDImagePicker *imagePicker = nil;
 - (void)p_takePhotoFromPhotoLibrary
 {
     if ([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypePhotoLibrary]){
-
         UIImagePickerController *imagePicker = [UIImagePickerController new];
         imagePicker.delegate = self;
         imagePicker.title  = @"选择照片";

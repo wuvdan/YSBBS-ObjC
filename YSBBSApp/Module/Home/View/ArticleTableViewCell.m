@@ -82,7 +82,7 @@
     model.imgArr = imgArr;
     
     NSMutableArray * mutArr = [NSMutableArray array];
-    for (int a= 0; a < model.smallUrls.count; a++) {
+    for (int a = 0; a < model.smallUrls.count; a++) {
         ELPhotoModel * photoModel = [[ELPhotoModel alloc]init];
         photoModel.smallURL       = model.smallUrls[a];
         photoModel.picURL         = model.originalUrls[a];
@@ -110,7 +110,6 @@
     CGRect cell_window_rect = [self.collectionView convertRect:cellRect toView:UIApplication.sharedApplication.delegate.window];
     return cell_window_rect;
 }
-
 
 - (void)setModel:(UserPostModel *)model {
     _model = model;

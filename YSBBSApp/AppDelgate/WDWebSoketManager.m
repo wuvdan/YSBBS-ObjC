@@ -9,7 +9,7 @@
 #import "WDWebSoketManager.h"
 #import <SocketRocket.h>
 
-#define dispatch_main_async_safe(block)\
+#define dispatch_main_async_safe_wu(block)\
 if ([NSThread isMainThread]) {\
 block();\
 } else {\
@@ -47,38 +47,36 @@ dispatch_async(dispatch_get_main_queue(), block);\
 }
 
 - (void)closeContat {
-    //    NSLog(@"************************** socket 关闭链连接************************** ");
-    //    if (self.socket){
-    //        [self.socket close];
-    //        self.socket = nil;
-    //        //断开连接时销毁心跳
-    //        [self destoryHeartBeat];
-    //    }
-    
+        NSLog(@"************************** socket 关闭链连接************************** ");
+        if (self.socket){
+            [self.socket close];
+            self.socket = nil;
+            //断开连接时销毁心跳
+            [self destoryHeartBeat];
+        }
 }
 
 - (void)destoryHeartBeat {
-    dispatch_main_async_safe(^{
-        if (self.heartBeat) {
-            if ([self.heartBeat respondsToSelector:@selector(isValid)]){
-                if ([self.heartBeat isValid]){
-                    [self.heartBeat invalidate];
-                    self.heartBeat = nil;
-                }
+//    dispatch_main_async_safe_wu(^{
+//       
+//    })
+    if (self.heartBeat) {
+        if ([self.heartBeat respondsToSelector:@selector(isValid)]){
+            if ([self.heartBeat isValid]){
+                [self.heartBeat invalidate];
+                self.heartBeat = nil;
             }
         }
-    })
+    }
 }
 
 //初始化心跳
 - (void)initHeartBeat {
-    //    dispatch_main_async_safe(^{
-    //        [self destoryHeartBeat];
-    //        //心跳设置为3分钟，NAT超时一般为5分钟
-    //        self.heartBeat = [NSTimer timerWithTimeInterval:3 target:self selector:@selector(sentheart) userInfo:nil repeats:YES];
-    //        //和服务端约定好发送什么作为心跳标识，尽可能的减小心跳包大小
-    //        [[NSRunLoop currentRunLoop] addTimer:self.heartBeat forMode:NSRunLoopCommonModes];
-    //    })
+    [self destoryHeartBeat];
+    //心跳设置为3分钟，NAT超时一般为5分钟
+    self.heartBeat = [NSTimer timerWithTimeInterval:3 target:self selector:@selector(sentheart) userInfo:nil repeats:YES];
+    //和服务端约定好发送什么作为心跳标识，尽可能的减小心跳包大小
+    [[NSRunLoop currentRunLoop] addTimer:self.heartBeat forMode:NSRunLoopCommonModes];
 }
 
 -(void)sentheart{
