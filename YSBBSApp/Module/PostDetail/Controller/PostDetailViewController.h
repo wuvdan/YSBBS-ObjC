@@ -12,7 +12,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @class UserPostModel;
 
-@interface PostDetailViewController : BaseViewController
+@interface PostDetailViewController : BaseViewController 
 
 @property (nonatomic, strong) UserPostModel *model;
 

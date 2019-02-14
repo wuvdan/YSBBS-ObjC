@@ -21,7 +21,8 @@
                                         LZAlterViewDelegate,
                                         DZNEmptyDataSetSource,
                                         DZNEmptyDataSetDelegate,
-                                        PostArticleDetailCellDelegate>
+                                        PostArticleDetailCellDelegate,
+                                        UIPreviewActionItem>
 
 @property (nonatomic, strong) PostCommentToolView *commentToolView;
 @property (nonatomic, assign) CGFloat textHeight;
@@ -90,6 +91,39 @@
     }
 }
 
+- (NSArray<id<UIPreviewActionItem>> *)previewActionItems {
+    
+    UIPreviewAction *collectPost = [UIPreviewAction actionWithTitle:@"收藏帖子" style:UIPreviewActionStyleDefault handler:^(UIPreviewAction * _Nonnull action, UIViewController * _Nonnull previewViewController) {
+        [[BBSNetworkTool shareInstance] collectPostWithId:self.detailModel.id successBlock:^(id  _Nonnull obj) {
+        }];
+    }];
+    
+    UIPreviewAction *unCollectPost = [UIPreviewAction actionWithTitle:@"取消收藏" style:UIPreviewActionStyleDefault handler:^(UIPreviewAction * _Nonnull action, UIViewController * _Nonnull previewViewController) {
+        [[BBSNetworkTool shareInstance] unCollectPostWithId:self.detailModel.id successBlock:^(id  _Nonnull obj) {
+        }];
+    }];
+    
+    UIPreviewAction *deletePost = [UIPreviewAction actionWithTitle:@"删除帖子" style:UIPreviewActionStyleDefault handler:^(UIPreviewAction * _Nonnull action, UIViewController * _Nonnull previewViewController) {
+        [[[[LZAlterView alter] configureWithActionTitleArray:@[@"确定删帖？"]
+                                           cancelActionTitle:@"取消"] setupDelegate:self] showAlter];
+    }];
+    
+    NSMutableArray *array = [NSMutableArray array];
+    
+    if (self.detailModel.isCollection) {
+        [array addObject:unCollectPost];
+    } else {
+        [array addObject:collectPost];
+    }
+    
+    if (self.model.isMy) {
+        [array addObject:deletePost];
+    }
+    
+    NSLog(@"是否是我的：%d", self.model.isMy);
+    
+    return array;
+}
 
 #pragma mark  提示删帖 
 - (void)deletePostData {

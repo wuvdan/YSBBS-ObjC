@@ -165,13 +165,12 @@
     }
     cell.delegate = self;
     cell.model = self.modelArray[indexPath.section];
+    [self registerForPreviewingWithDelegate:self sourceView:cell];
     return cell;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     
-    ArticleTableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
-        
     PostDetailViewController *controller = [[PostDetailViewController alloc] init];
     UserPostModel *model = self.modelArray[indexPath.section];
     controller.topicId = model.id;
@@ -180,11 +179,13 @@
         [self getListOfUserPostWithPageNo:self.pageNo];
     };
     controller.model = model;
-    [self registerForPreviewingWithDelegate:self sourceView:cell];
     [self.navigationController pushViewController:controller animated:true];
 }
 
-
+//pop代理方法
+-(void)previewingContext:(id<UIViewControllerPreviewing>)previewingContext commitViewController:(UIViewController *)viewControllerToCommit {
+    [self showViewController:viewControllerToCommit sender:self];
+}
 
 #pragma mark - peek的代理方法，轻按即可触发弹出vc
 - (UIViewController *)previewingContext:(id <UIViewControllerPreviewing>)previewingContext viewControllerForLocation:(CGPoint)location {
@@ -198,15 +199,10 @@
         [self getListOfUserPostWithPageNo:self.pageNo];
     };
     controller.model = model;
+    
     return controller;
 }
 
-#pragma mark -  pop的代理方法，在此处可对将要进入的vc进行处理
-- (void)previewingContext:(id <UIViewControllerPreviewing>)previewingContext commitViewController:(UIViewController *)viewControllerToCommit
-{
-    [self.navigationController pushViewController:viewControllerToCommit animated:true];
-
-}
 
 - (BOOL)tableView:(UITableView *)tableView shouldHighlightRowAtIndexPath:(NSIndexPath *)indexPath  {
     UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
