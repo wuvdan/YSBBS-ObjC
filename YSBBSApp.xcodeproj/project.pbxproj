@@ -88,6 +88,7 @@
 		48BFEE9822153A1E00E31D2D /* CollectedUserListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 48BFEE9722153A1E00E31D2D /* CollectedUserListViewController.m */; };
 		48BFEE9C22153E6700E31D2D /* CollectedUserTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 48BFEE9A22153E6700E31D2D /* CollectedUserTableViewCell.m */; };
 		48BFEE9D22153E6700E31D2D /* CollectedUserTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 48BFEE9B22153E6700E31D2D /* CollectedUserTableViewCell.xib */; };
+		48BFEEA0221549BF00E31D2D /* OtherMorePostViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 48BFEE9F221549BF00E31D2D /* OtherMorePostViewController.m */; };
 		48CBEB4C21F0272000A1426F /* PostArticleImageCollectionViewTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 48CBEB4B21F0272000A1426F /* PostArticleImageCollectionViewTableViewCell.m */; };
 		48CBEB5321F02D5800A1426F /* PostArticleImageCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 48CBEB5121F02D5800A1426F /* PostArticleImageCollectionViewCell.m */; };
 		48CBEB5421F02D5800A1426F /* PostArticleImageCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 48CBEB5221F02D5800A1426F /* PostArticleImageCollectionViewCell.xib */; };
@@ -289,6 +290,8 @@
 		48BFEE9922153E6700E31D2D /* CollectedUserTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CollectedUserTableViewCell.h; sourceTree = "<group>"; };
 		48BFEE9A22153E6700E31D2D /* CollectedUserTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CollectedUserTableViewCell.m; sourceTree = "<group>"; };
 		48BFEE9B22153E6700E31D2D /* CollectedUserTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CollectedUserTableViewCell.xib; sourceTree = "<group>"; };
+		48BFEE9E221549BF00E31D2D /* OtherMorePostViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OtherMorePostViewController.h; sourceTree = "<group>"; };
+		48BFEE9F221549BF00E31D2D /* OtherMorePostViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OtherMorePostViewController.m; sourceTree = "<group>"; };
 		48CBEB4A21F0272000A1426F /* PostArticleImageCollectionViewTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PostArticleImageCollectionViewTableViewCell.h; sourceTree = "<group>"; };
 		48CBEB4B21F0272000A1426F /* PostArticleImageCollectionViewTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PostArticleImageCollectionViewTableViewCell.m; sourceTree = "<group>"; };
 		48CBEB5021F02D5800A1426F /* PostArticleImageCollectionViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PostArticleImageCollectionViewCell.h; sourceTree = "<group>"; };
@@ -887,6 +890,8 @@
 			children = (
 				48BFEE89221500E400E31D2D /* UserCenterViewController.h */,
 				48BFEE8A221500E400E31D2D /* UserCenterViewController.m */,
+				48BFEE9E221549BF00E31D2D /* OtherMorePostViewController.h */,
+				48BFEE9F221549BF00E31D2D /* OtherMorePostViewController.m */,
 				48BFEE8F2215089900E31D2D /* OtherUserInfoHeaderView.h */,
 				48BFEE902215089900E31D2D /* OtherUserInfoHeaderView.m */,
 				48BFEE8C2215077000E31D2D /* OtherUserInfoModel.h */,
@@ -1230,6 +1235,7 @@
 				48CBEB5321F02D5800A1426F /* PostArticleImageCollectionViewCell.m in Sources */,
 				489C510C2131073900219665 /* DefaultsConfig.m in Sources */,
 				48B5F121213513E5008AA953 /* ChangePasswordViewController.m in Sources */,
+				48BFEEA0221549BF00E31D2D /* OtherMorePostViewController.m in Sources */,
 				48554CF121F5A4C5004DD479 /* WudanHUD.m in Sources */,
 				48D69A21219D1AB500D158D0 /* UserListArticleCell.m in Sources */,
 				48613DF5219BEB6400CE491F /* ArticleTableViewCell.m in Sources */,

@@ -149,10 +149,10 @@
     
     [imageView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.center.mas_equalTo(view);
-        make.width.height.mas_equalTo(100);
+        make.width.height.mas_equalTo(100 * kScreenWidthRate);
     }];
     
-    imageView.layer.cornerRadius  = 100/2;
+    imageView.layer.cornerRadius  = 100/2 * kScreenWidthRate;
     imageView.layer.masksToBounds = true;
     imageView.layer.borderWidth   = 1;
     imageView.layer.borderColor   = kMainWhite.CGColor;

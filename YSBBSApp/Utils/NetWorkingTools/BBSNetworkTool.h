@@ -142,6 +142,7 @@ NS_ASSUME_NONNULL_BEGIN
  @param aSuccessBlock 成功回调
  */
 - (void)likePostWithTopicId:(NSInteger)topicId successBlock:(void(^)(id obj))aSuccessBlock;
+
 /**
  * 取消点赞帖子
  *
@@ -288,6 +289,16 @@ NS_ASSUME_NONNULL_BEGIN
  @param aSuccessBlock 成功回调
  */
 - (void)unCollectPostWithId:(NSInteger)Id successBlock:(void(^)(id obj))aSuccessBlock;
+
+/**
+ * 获取用户帖子
+ *
+ @param aPageSize 一页多少
+ @param pageNo 页码
+ @param aSuccessBlock 成功回调
+ */
+- (void)getPostListUserId:(NSInteger)userId pageSize:(NSString *)aPageSize pageNo:(NSInteger)pageNo successBlock:(void(^)(id obj))aSuccessBlock failBlock:(void (^)(void))aFailBlock;
+
 @end
 
 NS_ASSUME_NONNULL_END

@@ -343,7 +343,7 @@ static BBSNetworkTool *_instance;
     [[WDNetWorkingTool shareInstance] requestWithManthMethod:RequsetMethodGet
                                      requsetParameteLocation:RequsetParameterLocationHeader
                                                   urlAddress:[NSString stringWithFormat:@"%@/%@",G_Http_URL,postDetailAPI]
-                                             isShowIndicator:true
+                                             isShowIndicator:false
                                                 parameterDic:@{@"topicId":[NSString stringWithFormat:@"%ld",(long)topicId]}
                                          requsetSuccessBlock:^(id  _Nonnull obj) {
                                              aSuccessBlock(obj);
@@ -358,7 +358,7 @@ static BBSNetworkTool *_instance;
     [[WDNetWorkingTool shareInstance] requestWithManthMethod:RequsetMethodGet
                                      requsetParameteLocation:RequsetParameterLocationHeader
                                                   urlAddress:[NSString stringWithFormat:@"%@/%@",G_Http_URL,commentListAPI]
-                                             isShowIndicator:pageNo == 1 ? true : false
+                                             isShowIndicator:false
                                                 parameterDic:@{@"pageSize":aPageSize,
                                                                @"pageNo":[NSString stringWithFormat:@"%ld",(long)pageNo],
                                                                @"topicId":[NSString stringWithFormat:@"%ld",(long)topicId]
@@ -555,6 +555,23 @@ static BBSNetworkTool *_instance;
                                                   urlAddress:[NSString stringWithFormat:@"%@/%@",G_Http_URL,unCollectPostAPI]
                                              isShowIndicator:false
                                                 parameterDic:@{@"topicId" : [NSString stringWithFormat:@"%ld", (long)Id],}
+                                         requsetSuccessBlock:^(id  _Nonnull obj) {
+                                             aSuccessBlock(obj);
+                                         } requsetFailBlock:^(id  _Nonnull obj) {
+                                             [self handlerFailDataDic:obj];
+                                         }];
+}
+
+#pragma mark  获取用户列表
+- (void)getPostListUserId:(NSInteger)userId pageSize:(NSString *)aPageSize pageNo:(NSInteger)pageNo successBlock:(void (^)(id _Nonnull))aSuccessBlock failBlock:(void (^)(void))aFailBlock {
+    [[WDNetWorkingTool shareInstance] requestWithManthMethod:RequsetMethodGet
+                                     requsetParameteLocation:RequsetParameterLocationHeader
+                                                  urlAddress:[NSString stringWithFormat:@"%@/%@",G_Http_URL,postListAPI]
+                                             isShowIndicator:pageNo == 1 ? true : false
+                                                parameterDic:@{@"pageSize":aPageSize,
+                                                               @"pageNo":[NSString stringWithFormat:@"%ld",(long)pageNo],
+                                                               @"userId":[NSString stringWithFormat:@"%ld",(long)userId]
+                                                               }
                                          requsetSuccessBlock:^(id  _Nonnull obj) {
                                              aSuccessBlock(obj);
                                          } requsetFailBlock:^(id  _Nonnull obj) {

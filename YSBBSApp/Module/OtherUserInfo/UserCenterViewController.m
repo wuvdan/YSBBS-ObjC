@@ -13,6 +13,7 @@
 #import "UserListArticleImageCell.h"
 #import "UserListArticleCell.h"
 #import "PostDetailViewController.h"
+#import "OtherMorePostViewController.h"
 
 @interface UserCenterViewController () <OtherUserInfoHeaderViewDelegate>
 
@@ -29,7 +30,6 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
 
     [self.view addSubview:self.tableView];
     
@@ -47,12 +47,16 @@
         [self.headerView setupWithModel:self.model];
         [self.tableView reloadData];
         
-        if (self.model.topicList.count > 5) {
+        if (self.model.topicNum > 5) {
             [self.footerView setTitle:@"加载更多" forState:UIControlStateNormal];
+            [self.footerView addTarget:self action:@selector(morePost:) forControlEvents:UIControlEventTouchUpInside];
+            self.footerView.frame = CGRectMake(0, 0, kSCREEN_WIDTH, 45 * kScreenWidthRate);
         } else if (self.model.topicList.count == 0) {
             [self.footerView setTitle:@"暂无任何帖子" forState:UIControlStateNormal];
+            self.footerView.frame = CGRectMake(0, 0, kSCREEN_WIDTH, 45 * kScreenWidthRate);
         } else {
             [self.footerView setTitle:@"" forState:UIControlStateNormal];
+            self.footerView.frame = CGRectMake(0, 0, kSCREEN_WIDTH, 0);
         }
     }];
     
@@ -69,8 +73,15 @@
     self.footerView = [[UIButton alloc] init];
     [self.footerView setTitle:@"暂无任何帖子" forState:UIControlStateNormal];
     [self.footerView setTitleColor:UIColor.lightGrayColor forState:UIControlStateNormal];
+    self.footerView.titleLabel.font = [UIFont systemFontOfSize:13];
     self.footerView.frame = CGRectMake(0, 0, kSCREEN_WIDTH, 45 * kScreenWidthRate);
     self.tableView.tableFooterView = self.footerView;
+}
+
+- (void)morePost:(id)sender {
+    OtherMorePostViewController *vc = [[OtherMorePostViewController alloc] init];
+    vc.userId = self.userId;
+    [self.navigationController pushViewController:vc animated:true];
 }
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView {
