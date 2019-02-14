@@ -15,6 +15,7 @@
 }
 
 - (void)encodeWithCoder:(NSCoder *)encoder {
+    [encoder encodeInteger:self.userId forKey:@"userId"];
     [encoder encodeBool:self.isLike forKey:@"isLike"];
     [encoder encodeInteger:self.isMy forKey:@"isMy"];
     [encoder encodeInteger:self.id forKey:@"id"];
@@ -33,6 +34,7 @@
         self.isLike     = [decoder decodeBoolForKey:@"isLike"];
         self.id         = [decoder decodeIntegerForKey:@"id"];
         self.isMy       = [decoder decodeIntegerForKey:@"isMy"];
+        self.userId = [decoder decodeIntegerForKey:@"userId"];
         self.commentNum = [decoder decodeIntegerForKey:@"commentNum"];
         self.likeNum    = [decoder decodeIntegerForKey:@"likeNum"];
         self.nickname   = [decoder decodeObjectForKey:@"nickname"];

@@ -29,6 +29,8 @@
     if(self){
         [self setupSubviews];
         [self setupSubviewsConstraints];
+        
+        [self addObserver];
     }
     return self;
 }
@@ -43,11 +45,40 @@
     return YES;
 }
 
+- (void)showView {
+    [super showView];
+    [self.textFiled becomeFirstResponder];
+}
+
+// 添加通知监听见键盘弹出/退出
+- (void)addObserver {
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardAction:) name:UIKeyboardWillShowNotification object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardAction:) name:UIKeyboardWillHideNotification object:nil];
+}
+
+#pragma mark -  键盘监听事件
+- (void)keyboardAction:(NSNotification*)sender{
+    NSDictionary *useInfo = [sender userInfo];
+    NSValue *value = [useInfo objectForKey:UIKeyboardFrameEndUserInfoKey];
+    
+    if ([sender.name isEqualToString:UIKeyboardWillShowNotification]) {
+        [self.containerView mas_remakeConstraints:^(MASConstraintMaker *make) {
+            make.leading.trailing.mas_equalTo(self).inset(kRealWidthValue(30));
+            make.bottom.mas_equalTo(self).inset([value CGRectValue].size.height);
+            make.height.mas_equalTo(self.containerView.mas_width).multipliedBy(0.7);
+        }];
+    } else {
+        [self.containerView mas_remakeConstraints:^(MASConstraintMaker *make) {
+            make.leading.trailing.mas_equalTo(self).inset(kRealWidthValue(30));
+            make.centerY.mas_equalTo(self);
+            make.height.mas_equalTo(self.containerView.mas_width).multipliedBy(0.7);
+        }];
+    }
+}
+
 #pragma mark - SetupSubviewsUI
 - (void)setupSubviews{
-    
-    [self.textFiled becomeFirstResponder];
-    
+        
     self.containerView = [[UIView alloc] init];
     self.containerView.backgroundColor = UIColor.whiteColor;
     self.containerView.layer.cornerRadius = kRealWidthValue(10);

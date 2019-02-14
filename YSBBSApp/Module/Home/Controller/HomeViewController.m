@@ -14,6 +14,7 @@
 #import "PostDetailViewController.h"
 #import "ArticleTableViewCell.h"
 #import "WDPageViewController.h"
+#import "UserCenterViewController.h"
 
 
 @interface HomeViewController ()<ArticleTableViewCellDelegate,
@@ -263,6 +264,17 @@
         [self getListOfUserPostWithPageNo:self.pageNo];
     };
     [self.navigationController pushViewController:controller animated:true];
+}
+
+- (void)userInfoWithModel:(UserPostModel *)model {
+    if (model.isMy) {
+        WDPageViewController *vc = [[WDPageViewController alloc] init];
+        [self.navigationController pushViewController:vc animated:true];
+    } else {
+        UserCenterViewController *vc = [[UserCenterViewController alloc] init];
+        vc.userId = model.userId;
+        [self.navigationController pushViewController:vc animated:true];
+    }
 }
 
 #pragma mark - NetWork Request

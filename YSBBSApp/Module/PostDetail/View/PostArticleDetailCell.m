@@ -184,6 +184,19 @@
     self.collectionView.delegate = self;
     self.collectionView.dataSource = self;
     [self.collectionView registerNib:[UINib nibWithNibName:@"ArticleImageCollectionViewCell" bundle:nil] forCellWithReuseIdentifier:@"ArticleImageCollectionViewCell"];
+    self.headerImageView.userInteractionEnabled = true;
+    self.nickNameLabel.userInteractionEnabled = true;
+    UITapGestureRecognizer *tapGusture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(userInfoTouched:)];
+    UITapGestureRecognizer *tapGusture1 = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(userInfoTouched:)];
+    
+    [self.headerImageView addGestureRecognizer:tapGusture1];
+    [self.nickNameLabel addGestureRecognizer:tapGusture];
+}
+
+- (void)userInfoTouched:(id)sender {
+    if (self.delegate && [self.delegate respondsToSelector:@selector(userInfoWithModel:)]) {
+        [self.delegate userInfoWithModel:self.userPostModel];
+    }
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {

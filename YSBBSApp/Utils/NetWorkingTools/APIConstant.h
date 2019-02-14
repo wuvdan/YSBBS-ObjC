@@ -86,6 +86,27 @@ UIKIT_EXTERN NSString * const getMessageListAPI;
 // 获取消息详情
 UIKIT_EXTERN NSString * const getMessageDetailAPI;
 
+// 获取其他用户信息
+UIKIT_EXTERN NSString * const getOtherUserInfoAPI;
+
+// 关注用户列表
+UIKIT_EXTERN NSString * const followUserListAPI;
+
+// 关注用户
+UIKIT_EXTERN NSString * const followUserAPI;
+
+// 取消关注用户
+UIKIT_EXTERN NSString * const unfollowUserAPI;
+
+// 收藏列表
+UIKIT_EXTERN NSString * const collectionListAPI;
+
+// 收藏帖子
+UIKIT_EXTERN NSString * const collectPostAPI;
+
+// 取消收藏帖子
+UIKIT_EXTERN NSString * const unCollectPostAPI;
+
 // Socket获取通知
 UIKIT_EXTERN NSString * const getRemoteNotification;
 
@@ -100,3 +121,5 @@ UIKIT_EXTERN NSString * const CommentListTable;
 
 // 个人信息
 UIKIT_EXTERN NSString * const UserInfoTable;
+
+

@@ -139,7 +139,6 @@
     view.backgroundColor = kMainBlack;
     
     FLAnimatedImageView *imageView   = [[FLAnimatedImageView alloc] init];
-//    imageView.image                  = [UIImage imageNamed:imageName];
     imageView.clipsToBounds          = false;
     imageView.contentMode = UIViewContentModeScaleAspectFill;
     imageView.userInteractionEnabled = true;

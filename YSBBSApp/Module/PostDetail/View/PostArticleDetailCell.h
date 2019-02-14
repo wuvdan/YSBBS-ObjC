@@ -10,11 +10,16 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@class PostDetailModel;
-@class UserPostModel;
+@class PostDetailModel, UserPostModel;
+
+@protocol PostArticleDetailCellDelegate <NSObject>
+
+- (void)userInfoWithModel:(UserPostModel *)model;
+
+@end
 
 @interface PostArticleDetailCell : UITableViewCell
-
+@property (nonatomic, weak) id <PostArticleDetailCellDelegate> delegate;
 @property (nonatomic, strong) PostDetailModel *model;
 @property (nonatomic, strong) UserPostModel *userPostModel;
 

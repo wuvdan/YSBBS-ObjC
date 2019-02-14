@@ -427,6 +427,7 @@ static BBSNetworkTool *_instance;
                                          }];
 }
 
+#pragma mark  消息列表
 - (void)getMessageWithPageNo:(NSInteger)pageNo successBlock:(void (^)(id _Nonnull))aSuccessBlock {
     
     [[WDNetWorkingTool shareInstance] requestWithManthMethod:RequsetMethodGet
@@ -443,6 +444,7 @@ static BBSNetworkTool *_instance;
     
 }
 
+#pragma mark  消息详情
 - (void)getMessageWithId:(NSInteger)Id successBlock:(void (^)(id _Nonnull))aSuccessBlock {
     
     [[WDNetWorkingTool shareInstance] requestWithManthMethod:RequsetMethodGet
@@ -458,6 +460,108 @@ static BBSNetworkTool *_instance;
     
 }
 
+#pragma mark  获取其他用户信息
+- (void)getOtherUserInfoWithUserId:(NSInteger)userId successBlock:(void (^)(id _Nonnull))aSuccessBlock {
+    [[WDNetWorkingTool shareInstance] requestWithManthMethod:RequsetMethodGet
+                                     requsetParameteLocation:RequsetParameterLocationHeader
+                                                  urlAddress:[NSString stringWithFormat:@"%@/%@",G_Http_URL,getOtherUserInfoAPI]
+                                             isShowIndicator:true
+                                                parameterDic:@{@"userId" : [NSString stringWithFormat:@"%ld", (long)userId]}
+                                         requsetSuccessBlock:^(id  _Nonnull obj) {
+                                             aSuccessBlock(obj);
+                                         } requsetFailBlock:^(id  _Nonnull obj) {
+                                             [self handlerFailDataDic:obj];
+                                         }];
+}
+
+#pragma mark  关注用户列表
+- (void)getCollectionUserListPostPageSize:(NSString *)aPageSize pageNo:(NSInteger)pageNo successBlock:(void (^)(id _Nonnull))aSuccessBlock {
+    [[WDNetWorkingTool shareInstance] requestWithManthMethod:RequsetMethodGet
+                                     requsetParameteLocation:RequsetParameterLocationHeader
+                                                  urlAddress:[NSString stringWithFormat:@"%@/%@",G_Http_URL,followUserListAPI]
+                                             isShowIndicator:pageNo == 1 ? true : false
+                                                parameterDic:@{@"pageSize":aPageSize,
+                                                               @"pageNo":[NSString stringWithFormat:@"%ld",(long)pageNo]}
+                                         requsetSuccessBlock:^(id  _Nonnull obj) {
+                                             aSuccessBlock(obj);
+                                         } requsetFailBlock:^(id  _Nonnull obj) {
+                                             [self handlerFailDataDic:obj];
+                                         }];
+}
+
+#pragma mark  关注用户
+- (void)followUserWithUserId:(NSInteger)userId successBlock:(void (^)(id _Nonnull))aSuccessBlock {
+    [[WDNetWorkingTool shareInstance] requestWithManthMethod:RequsetMethodPost
+                                     requsetParameteLocation:RequsetParameterLocationHeader
+                                                  urlAddress:[NSString stringWithFormat:@"%@/%@",G_Http_URL,followUserAPI]
+                                             isShowIndicator:false
+                                                parameterDic:@{@"followUserId" : [NSString stringWithFormat:@"%ld", (long)userId],}
+                                         requsetSuccessBlock:^(id  _Nonnull obj) {
+                                             aSuccessBlock(obj);
+                                         } requsetFailBlock:^(id  _Nonnull obj) {
+                                             [self handlerFailDataDic:obj];
+                                         }];
+}
+
+#pragma mark  取消关注用户
+- (void)unfollowUserWithUserId:(NSInteger)userId successBlock:(void (^)(id _Nonnull))aSuccessBlock {
+    [[WDNetWorkingTool shareInstance] requestWithManthMethod:RequsetMethodPost
+                                     requsetParameteLocation:RequsetParameterLocationHeader
+                                                  urlAddress:[NSString stringWithFormat:@"%@/%@",G_Http_URL,unfollowUserAPI]
+                                             isShowIndicator:false
+                                                parameterDic:@{@"followUserId" : [NSString stringWithFormat:@"%ld", (long)userId],}
+                                         requsetSuccessBlock:^(id  _Nonnull obj) {
+                                             aSuccessBlock(obj);
+                                         } requsetFailBlock:^(id  _Nonnull obj) {
+                                             [self handlerFailDataDic:obj];
+                                         }];
+}
+
+#pragma mark  收藏帖子列表
+- (void)getCollectionListPostPageSize:(NSString *)aPageSize pageNo:(NSInteger)pageNo successBlock:(void(^)(id obj))aSuccessBlock {
+    
+    [[WDNetWorkingTool shareInstance] requestWithManthMethod:RequsetMethodGet
+                                     requsetParameteLocation:RequsetParameterLocationHeader
+                                                  urlAddress:[NSString stringWithFormat:@"%@/%@",G_Http_URL,collectionListAPI]
+                                             isShowIndicator:pageNo == 1 ? true : false
+                                                parameterDic:@{@"pageSize":aPageSize,
+                                                               @"pageNo":[NSString stringWithFormat:@"%ld",(long)pageNo]}
+                                         requsetSuccessBlock:^(id  _Nonnull obj) {
+                                             aSuccessBlock(obj);
+                                         } requsetFailBlock:^(id  _Nonnull obj) {
+                                             [self handlerFailDataDic:obj];
+                                         }];
+    
+}
+
+#pragma mark  收藏帖子
+- (void)collectPostWithId:(NSInteger)Id successBlock:(void (^)(id _Nonnull))aSuccessBlock {
+    [[WDNetWorkingTool shareInstance] requestWithManthMethod:RequsetMethodPost
+                                     requsetParameteLocation:RequsetParameterLocationHeader
+                                                  urlAddress:[NSString stringWithFormat:@"%@/%@",G_Http_URL,collectPostAPI]
+                                             isShowIndicator:false
+                                                parameterDic:@{@"topicId" : [NSString stringWithFormat:@"%ld", (long)Id],}
+                                         requsetSuccessBlock:^(id  _Nonnull obj) {
+                                             aSuccessBlock(obj);
+                                         } requsetFailBlock:^(id  _Nonnull obj) {
+                                             [self handlerFailDataDic:obj];
+                                         }];
+}
+
+#pragma mark  收藏帖子
+- (void)unCollectPostWithId:(NSInteger)Id successBlock:(void (^)(id _Nonnull))aSuccessBlock {
+    [[WDNetWorkingTool shareInstance] requestWithManthMethod:RequsetMethodPost
+                                     requsetParameteLocation:RequsetParameterLocationHeader
+                                                  urlAddress:[NSString stringWithFormat:@"%@/%@",G_Http_URL,unCollectPostAPI]
+                                             isShowIndicator:false
+                                                parameterDic:@{@"topicId" : [NSString stringWithFormat:@"%ld", (long)Id],}
+                                         requsetSuccessBlock:^(id  _Nonnull obj) {
+                                             aSuccessBlock(obj);
+                                         } requsetFailBlock:^(id  _Nonnull obj) {
+                                             [self handlerFailDataDic:obj];
+                                         }];
+}
+
 #pragma mark  处理请求错误数据 
 - (void)handlerFailDataDic:(NSDictionary *)dataDic {
     
@@ -468,7 +572,9 @@ static BBSNetworkTool *_instance;
          showBarAfterTimeInterval:1.2];
         
         if ([dataDic[@"code"] integerValue] == 1001) {
-            [self clearAccountHistory];
+            dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+                [self clearAccountHistory];
+            });
         }
     }
 }

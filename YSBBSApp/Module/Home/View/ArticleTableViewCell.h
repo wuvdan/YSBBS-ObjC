@@ -10,13 +10,13 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@class UserPostModel;
-@class ArticleTableViewCell;
+@class UserPostModel, ArticleTableViewCell;
 
 @protocol ArticleTableViewCellDelegate <NSObject>
 
 - (void)likePostWithModel:(UserPostModel *)model inCell:(ArticleTableViewCell *)cell;
 - (void)commentPostWithModel:(UserPostModel *)model;
+- (void)userInfoWithModel:(UserPostModel *)model;
 
 @end
 

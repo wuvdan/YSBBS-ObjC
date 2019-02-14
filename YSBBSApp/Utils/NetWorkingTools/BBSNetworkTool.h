@@ -228,6 +228,66 @@ NS_ASSUME_NONNULL_BEGIN
  */
 - (void)getMessageWithId:(NSInteger)Id successBlock:(void (^)(id obj))aSuccessBlock;
 
+/**
+ * 获取其他用户信息
+ * 
+ @param userId 用户Id
+ @param aSuccessBlock 成功回调
+ */
+- (void)getOtherUserInfoWithUserId:(NSInteger)userId successBlock:(void(^)(id obj))aSuccessBlock;
+
+/**
+ * 收藏用户列表
+ *
+ @param aPageSize 一页多少
+ @param pageNo 页码
+ @param aSuccessBlock 成功回调
+ */
+- (void)getCollectionUserListPostPageSize:(NSString *)aPageSize pageNo:(NSInteger)pageNo successBlock:(void(^)(id obj))aSuccessBlock;
+
+
+
+/**
+ * 关注用户
+ *
+ @param userId 用户Id
+ @param aSuccessBlock 成功回调
+ */
+- (void)followUserWithUserId:(NSInteger)userId successBlock:(void(^)(id obj))aSuccessBlock;
+
+/**
+ * 取消关注用户
+
+ @param userId 用户Id
+ @param aSuccessBlock 成功回调
+ */
+- (void)unfollowUserWithUserId:(NSInteger)userId successBlock:(void(^)(id obj))aSuccessBlock;
+
+
+/**
+ * 收藏帖子列表
+ *
+ @param aPageSize 一页多少
+ @param pageNo 页码
+ @param aSuccessBlock 成功回调
+ */
+- (void)getCollectionListPostPageSize:(NSString *)aPageSize pageNo:(NSInteger)pageNo successBlock:(void(^)(id obj))aSuccessBlock;
+
+/**
+ * 收藏帖子
+
+ @param Id 帖子iID
+ @param aSuccessBlock 成功回调
+ */
+- (void)collectPostWithId:(NSInteger)Id successBlock:(void(^)(id obj))aSuccessBlock;
+
+/**
+ * 取消收藏帖子
+ 
+ @param Id 帖子iID
+ @param aSuccessBlock 成功回调
+ */
+- (void)unCollectPostWithId:(NSInteger)Id successBlock:(void(^)(id obj))aSuccessBlock;
 @end
 
 NS_ASSUME_NONNULL_END

@@ -188,6 +188,10 @@ static WDNetWorkingTool *_instance;
         } else {
             [[LZRemindBar configurationWithStyle:RemindBarStyleError showPosition:RemindBarPositionStatusBar contentText:@"请求失败"] showBarAfterTimeInterval:1.2];
         }
+        
+        if (showIndicator) {
+            [WudanHUD dismiss];
+        }
     }];
 }
 

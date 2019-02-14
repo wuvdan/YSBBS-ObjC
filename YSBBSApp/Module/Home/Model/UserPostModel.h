@@ -14,7 +14,7 @@ typedef NS_ENUM(NSInteger, PostCellStyle) {
 };
 
 @interface UserPostModel :NSObject <NSCoding>
-
+@property (nonatomic , assign) NSInteger      userId;
 @property (nonatomic , assign) bool      isLike;
 @property (nonatomic , assign) NSInteger isMy;
 @property (nonatomic , assign) NSInteger id;

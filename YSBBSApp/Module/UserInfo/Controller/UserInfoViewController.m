@@ -17,6 +17,8 @@
 #import "WudanHUD.h"
 #import "LZAlterView.h"
 #import "MessageListViewController.h"
+#import "CollectedViewController.h"
+#import "CollectedUserListViewController.h"
 
 @interface UserInfoViewController ()<LZAlterViewDelegate>
 
@@ -37,7 +39,7 @@
 #pragma mark  SetupSubviewsUI
 - (void)setupSubviews{
     
-    self.dataArray = @[@[@"昵称",@"修改登录密码",@"多设备登录"], @[@"消息"], @[@"清除缓存",@"退出登录"]];
+    self.dataArray = @[@[@"昵称",@"修改登录密码",@"多设备登录"], @[@"消息"], @[@"收藏的帖子", @"关注的用户"], @[@"清除缓存",@"退出登录"]];
     
     [self.tableView registerClass:[UserInfoTableViewCell class] forCellReuseIdentifier:@"UserInfoTableViewCell"];
     [self.view addSubview:self.tableView];
@@ -73,7 +75,7 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     UserInfoTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"UserInfoTableViewCell" forIndexPath:indexPath];
     cell.titileLabel.text = self.dataArray[indexPath.section][indexPath.row];
-    if (indexPath.section < 2) {
+    if (indexPath.section < 3) {
         cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
     } else {
         cell.accessoryType = UITableViewCellAccessoryNone;
@@ -83,7 +85,7 @@
         cell.subTitileLabel.text = self.userInfoModel.nickname;
     } else if (indexPath.section == 1 && indexPath.row == 0) {
         cell.subTitileLabel.text = @"";
-    }  else if (indexPath.section == 2 && indexPath.row == 0) {
+    }  else if (indexPath.section == 3 && indexPath.row == 0) {
         cell.subTitileLabel.text = [NSString stringWithFormat:@"%.2fM",[[UtilsManager shareInstance] getCacheSize]];
     } else if (indexPath.section == 0 && indexPath.row == 2 ) {
         UISwitch *swicth = [[UISwitch alloc] init];
@@ -95,7 +97,6 @@
         cell.subTitileLabel.text = @"";
     }
    
-    
     return cell;
 }
 
@@ -127,30 +128,30 @@
         }
         
     } else if (indexPath.section == 1) {
-        
         MessageListViewController *vc = [[MessageListViewController alloc] init];
         [self.navigationController pushViewController:vc animated:true];
-
+    } else if (indexPath.section == 2) {
+        if(indexPath.row == 0) {
+            CollectedViewController *vc = [[CollectedViewController alloc] init];
+            [self.navigationController pushViewController:vc animated:true];
+        } else {
+            CollectedUserListViewController *vc = [[CollectedUserListViewController alloc] init];
+            [self.navigationController pushViewController:vc animated:true];
+        }
     } else {
-        
         if (indexPath.row == 0) {
             [[UtilsManager shareInstance] cleanCache];
-            
             [WudanHUD setStyle:WudanHUDStyleDark];
-            
             [WudanHUD showIndicatorWithText:@"清理中..."];
-            
             dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
                 [WudanHUD showImageViewWithImageName:[UIImage imageNamed:@"MBHUD_Info"] contentText:@"清理成功"];
                 [WudanHUD dismissDelayTimeInterval:1.2];
                 [self.tableView reloadData];
             });
         } else {
-            
             [[[[LZAlterView alter] configureWithActionTitleArray:@[@"退出登录"] cancelActionTitle:@"取消"] setupDelegate:self] showAlter];
         }
     }
-  
 }
 
 #pragma mark - LZAlterViewDelegate

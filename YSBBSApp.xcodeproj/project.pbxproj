@@ -81,6 +81,13 @@
 		48B5F12D21352EFC008AA953 /* PostDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 48B5F12C21352EFC008AA953 /* PostDetailViewController.m */; };
 		48B5F132213535E6008AA953 /* PostDetailModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 48B5F131213535E6008AA953 /* PostDetailModel.m */; };
 		48B5F13D21354071008AA953 /* PostCommentToolView.m in Sources */ = {isa = PBXBuildFile; fileRef = 48B5F13C21354071008AA953 /* PostCommentToolView.m */; };
+		48BFEE8B221500E400E31D2D /* UserCenterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 48BFEE8A221500E400E31D2D /* UserCenterViewController.m */; };
+		48BFEE8E2215077000E31D2D /* OtherUserInfoModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 48BFEE8D2215077000E31D2D /* OtherUserInfoModel.m */; };
+		48BFEE912215089900E31D2D /* OtherUserInfoHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 48BFEE902215089900E31D2D /* OtherUserInfoHeaderView.m */; };
+		48BFEE952215364F00E31D2D /* CollectedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 48BFEE942215364F00E31D2D /* CollectedViewController.m */; };
+		48BFEE9822153A1E00E31D2D /* CollectedUserListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 48BFEE9722153A1E00E31D2D /* CollectedUserListViewController.m */; };
+		48BFEE9C22153E6700E31D2D /* CollectedUserTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 48BFEE9A22153E6700E31D2D /* CollectedUserTableViewCell.m */; };
+		48BFEE9D22153E6700E31D2D /* CollectedUserTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 48BFEE9B22153E6700E31D2D /* CollectedUserTableViewCell.xib */; };
 		48CBEB4C21F0272000A1426F /* PostArticleImageCollectionViewTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 48CBEB4B21F0272000A1426F /* PostArticleImageCollectionViewTableViewCell.m */; };
 		48CBEB5321F02D5800A1426F /* PostArticleImageCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 48CBEB5121F02D5800A1426F /* PostArticleImageCollectionViewCell.m */; };
 		48CBEB5421F02D5800A1426F /* PostArticleImageCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 48CBEB5221F02D5800A1426F /* PostArticleImageCollectionViewCell.xib */; };
@@ -269,6 +276,19 @@
 		48B5F131213535E6008AA953 /* PostDetailModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PostDetailModel.m; sourceTree = "<group>"; };
 		48B5F13B21354071008AA953 /* PostCommentToolView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PostCommentToolView.h; sourceTree = "<group>"; };
 		48B5F13C21354071008AA953 /* PostCommentToolView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PostCommentToolView.m; sourceTree = "<group>"; };
+		48BFEE89221500E400E31D2D /* UserCenterViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UserCenterViewController.h; sourceTree = "<group>"; };
+		48BFEE8A221500E400E31D2D /* UserCenterViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UserCenterViewController.m; sourceTree = "<group>"; };
+		48BFEE8C2215077000E31D2D /* OtherUserInfoModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OtherUserInfoModel.h; sourceTree = "<group>"; };
+		48BFEE8D2215077000E31D2D /* OtherUserInfoModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OtherUserInfoModel.m; sourceTree = "<group>"; };
+		48BFEE8F2215089900E31D2D /* OtherUserInfoHeaderView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OtherUserInfoHeaderView.h; sourceTree = "<group>"; };
+		48BFEE902215089900E31D2D /* OtherUserInfoHeaderView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OtherUserInfoHeaderView.m; sourceTree = "<group>"; };
+		48BFEE932215364F00E31D2D /* CollectedViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CollectedViewController.h; sourceTree = "<group>"; };
+		48BFEE942215364F00E31D2D /* CollectedViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CollectedViewController.m; sourceTree = "<group>"; };
+		48BFEE9622153A1E00E31D2D /* CollectedUserListViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CollectedUserListViewController.h; sourceTree = "<group>"; };
+		48BFEE9722153A1E00E31D2D /* CollectedUserListViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CollectedUserListViewController.m; sourceTree = "<group>"; };
+		48BFEE9922153E6700E31D2D /* CollectedUserTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CollectedUserTableViewCell.h; sourceTree = "<group>"; };
+		48BFEE9A22153E6700E31D2D /* CollectedUserTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CollectedUserTableViewCell.m; sourceTree = "<group>"; };
+		48BFEE9B22153E6700E31D2D /* CollectedUserTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CollectedUserTableViewCell.xib; sourceTree = "<group>"; };
 		48CBEB4A21F0272000A1426F /* PostArticleImageCollectionViewTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PostArticleImageCollectionViewTableViewCell.h; sourceTree = "<group>"; };
 		48CBEB4B21F0272000A1426F /* PostArticleImageCollectionViewTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PostArticleImageCollectionViewTableViewCell.m; sourceTree = "<group>"; };
 		48CBEB5021F02D5800A1426F /* PostArticleImageCollectionViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PostArticleImageCollectionViewCell.h; sourceTree = "<group>"; };
@@ -437,6 +457,10 @@
 				488D6EE0213382AE00FDE1EB /* UserInfoViewController.m */,
 				488D6F002133F82700FDE1EB /* UserPostListViewController.h */,
 				488D6F012133F82800FDE1EB /* UserPostListViewController.m */,
+				48BFEE932215364F00E31D2D /* CollectedViewController.h */,
+				48BFEE942215364F00E31D2D /* CollectedViewController.m */,
+				48BFEE9622153A1E00E31D2D /* CollectedUserListViewController.h */,
+				48BFEE9722153A1E00E31D2D /* CollectedUserListViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -460,6 +484,9 @@
 				488D6EE921338BBA00FDE1EB /* UserInfoTableViewCell.m */,
 				488D6EF32133C26C00FDE1EB /* ModifyNickNameView.h */,
 				488D6EF42133C26C00FDE1EB /* ModifyNickNameView.m */,
+				48BFEE9922153E6700E31D2D /* CollectedUserTableViewCell.h */,
+				48BFEE9A22153E6700E31D2D /* CollectedUserTableViewCell.m */,
+				48BFEE9B22153E6700E31D2D /* CollectedUserTableViewCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -752,6 +779,7 @@
 				488D6EE2213382B600FDE1EB /* UserInfo */,
 				48B5F12E21352F00008AA953 /* PostDetail */,
 				48496D9721FA9E34006D4D13 /* Message */,
+				48BFEE92221535A100E31D2D /* OtherUserInfo */,
 			);
 			path = Module;
 			sourceTree = "<group>";
@@ -852,6 +880,19 @@
 				48D5705921356146004A9095 /* CommentTableViewCell.m */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		48BFEE92221535A100E31D2D /* OtherUserInfo */ = {
+			isa = PBXGroup;
+			children = (
+				48BFEE89221500E400E31D2D /* UserCenterViewController.h */,
+				48BFEE8A221500E400E31D2D /* UserCenterViewController.m */,
+				48BFEE8F2215089900E31D2D /* OtherUserInfoHeaderView.h */,
+				48BFEE902215089900E31D2D /* OtherUserInfoHeaderView.m */,
+				48BFEE8C2215077000E31D2D /* OtherUserInfoModel.h */,
+				48BFEE8D2215077000E31D2D /* OtherUserInfoModel.m */,
+			);
+			path = OtherUserInfo;
 			sourceTree = "<group>";
 		};
 		48CBEB6C21F04AA100A1426F /* ELBrowser */ = {
@@ -1029,6 +1070,7 @@
 				48A8E5FC21E0929800BF6C2A /* XG_AlbumCell.xib in Resources */,
 				48613DF6219BEB6400CE491F /* ArticleTableViewCell.xib in Resources */,
 				48CBEB5421F02D5800A1426F /* PostArticleImageCollectionViewCell.xib in Resources */,
+				48BFEE9D22153E6700E31D2D /* CollectedUserTableViewCell.xib in Resources */,
 				48B0F41F212E8E8500E28310 /* LaunchScreen.storyboard in Resources */,
 				48B0F41C212E8E8500E28310 /* Assets.xcassets in Resources */,
 				48B0F41A212E8E7D00E28310 /* Main.storyboard in Resources */,
@@ -1106,6 +1148,7 @@
 				48CBEB6B21F04A9B00A1426F /* ELBrowser.m in Sources */,
 				488D6EFF2133E82700FDE1EB /* UITextView+Placeholder.m in Sources */,
 				48A8E5F721E0929800BF6C2A /* XG_PlayerManager.m in Sources */,
+				48BFEE8E2215077000E31D2D /* OtherUserInfoModel.m in Sources */,
 				48B5F132213535E6008AA953 /* PostDetailModel.m in Sources */,
 				48A8E5F821E0929800BF6C2A /* XG_MediaBrowseView.m in Sources */,
 				48D69A15219D0BD500D158D0 /* WDPageSegmentView.m in Sources */,
@@ -1126,6 +1169,7 @@
 				488D6F052133FBC400FDE1EB /* UserPostModel.m in Sources */,
 				48A8E5F421E0929800BF6C2A /* XG_RootViewController.m in Sources */,
 				48496DAB21FABFA2006D4D13 /* MessageTimeView.m in Sources */,
+				48BFEE952215364F00E31D2D /* CollectedViewController.m in Sources */,
 				48D01A29212FFD4100FC542F /* UITextField+Limit.m in Sources */,
 				48CBEB6621F04A9B00A1426F /* ELPhotoBrowserCollectionViewCell.m in Sources */,
 				48A8E60021E0929800BF6C2A /* XG_AssetPickerController.m in Sources */,
@@ -1141,6 +1185,7 @@
 				48A8E60121E0929800BF6C2A /* XG_AlbumModel.m in Sources */,
 				488D6EF121339FAC00FDE1EB /* WDImagePicker.m in Sources */,
 				4859201621FE9642008E435E /* PostArticleNetManager.m in Sources */,
+				48BFEE8B221500E400E31D2D /* UserCenterViewController.m in Sources */,
 				48496DAE21FAD8ED006D4D13 /* SocketUtils.m in Sources */,
 				48617AF6212FC94700F84819 /* WDInputView.m in Sources */,
 				48613DE5219BA81100CE491F /* PostArticleTextFieldCell.m in Sources */,
@@ -1149,6 +1194,7 @@
 				48496D9321FA99DC006D4D13 /* SocketManager.m in Sources */,
 				48CBEB6521F04A9B00A1426F /* ELBrowserConfig.m in Sources */,
 				48A8E5F621E0929800BF6C2A /* XG_AssetModel.m in Sources */,
+				48BFEE912215089900E31D2D /* OtherUserInfoHeaderView.m in Sources */,
 				48CBEB4C21F0272000A1426F /* PostArticleImageCollectionViewTableViewCell.m in Sources */,
 				48B0F422212E8E8500E28310 /* main.m in Sources */,
 				48CBEB6F21F04E5600A1426F /* UITextView+Addition.m in Sources */,
@@ -1165,12 +1211,14 @@
 				48B0F414212E8E7D00E28310 /* AppDelegate.m in Sources */,
 				488D6EE1213382AE00FDE1EB /* UserInfoViewController.m in Sources */,
 				48D69A3C219D437200D158D0 /* PostArticleDetailCell.m in Sources */,
+				48BFEE9C22153E6700E31D2D /* CollectedUserTableViewCell.m in Sources */,
 				48CBEB7221F04EE200A1426F /* UIScrollView+Addition.m in Sources */,
 				48496D9B21FAA30F006D4D13 /* MessageTableViewCell.m in Sources */,
 				48613DF1219BCA1C00CE491F /* UIImage+Addition.m in Sources */,
 				48496DA521FABB9A006D4D13 /* MessageInfoTableViewCell.m in Sources */,
 				48A8E5F521E0929800BF6C2A /* XG_BarButton.m in Sources */,
 				4812F24D21F16DC900842091 /* LZAlterView.m in Sources */,
+				48BFEE9822153A1E00E31D2D /* CollectedUserListViewController.m in Sources */,
 				489C510F2131080800219665 /* HomeViewController.m in Sources */,
 				48CBEB6821F04A9B00A1426F /* ELProgressView.m in Sources */,
 				48A8E5FA21E0929800BF6C2A /* UIView+XGAdd.m in Sources */,

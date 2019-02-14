@@ -158,10 +158,24 @@
     self.layer.masksToBounds                 = YES;
     self.headerImageView.layer.cornerRadius  = self.headerImageView.frame.size.width/2;
     self.headerImageView.layer.masksToBounds = YES;
+   
     self.collectionView.delegate             = self;
     self.collectionView.dataSource           = self;
     self.likeButton.tintColor                = UIColor.lightGrayColor;
+    self.headerImageView.userInteractionEnabled = true;
+    self.nickNameLabel.userInteractionEnabled = true;
+    UITapGestureRecognizer *tapGusture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(userInfoTouched:)];
+    UITapGestureRecognizer *tapGusture1 = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(userInfoTouched:)];
+    
+    [self.headerImageView addGestureRecognizer:tapGusture1];
+    [self.nickNameLabel addGestureRecognizer:tapGusture];
     [self.collectionView registerNib:[UINib nibWithNibName:@"ArticleImageCollectionViewCell" bundle:nil] forCellWithReuseIdentifier:@"ArticleImageCollectionViewCell"];
+}
+
+- (void)userInfoTouched:(id)sender {
+    if (self.delegate && [self.delegate respondsToSelector:@selector(userInfoWithModel:)]) {
+        [self.delegate userInfoWithModel:self.model];
+    }
 }
 
 - (void)setFrame:(CGRect)frame {

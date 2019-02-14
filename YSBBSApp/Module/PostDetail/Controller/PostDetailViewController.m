@@ -13,12 +13,15 @@
 #import "CommentTableViewCell.h"
 #import "PostArticleDetailCell.h"
 #import "UserPostModel.h"
+#import "WDPageViewController.h"
+#import "UserCenterViewController.h"
 
 @interface PostDetailViewController () <UITextViewDelegate,
                                         CommentTableViewCellLikeDelegate,
                                         LZAlterViewDelegate,
                                         DZNEmptyDataSetSource,
-                                        DZNEmptyDataSetDelegate>
+                                        DZNEmptyDataSetDelegate,
+                                        PostArticleDetailCellDelegate>
 
 @property (nonatomic, strong) PostCommentToolView *commentToolView;
 @property (nonatomic, assign) CGFloat textHeight;
@@ -91,12 +94,66 @@
 #pragma mark  提示删帖 
 - (void)deletePostData {
     kWeakSelf(self)
-    [self.wdNavigationBar.rightButton setTitle:@"删帖" forState:UIControlStateNormal];
-    [self.wdNavigationBar.rightButton setTitleColor:kMainWhite forState:UIControlStateNormal];
+    
+    UIImage *image = [[UIImage imageNamed:@"删除"] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
+    [self.wdNavigationBar.rightButton setImage:image forState:UIControlStateNormal];
+    self.wdNavigationBar.rightTwoButton.imageView.tintColor = UIColor.whiteColor;
+    
     self.wdNavigationBar.rightButtonBlock = ^{
         [[[[LZAlterView alter] configureWithActionTitleArray:@[@"确定删帖？"]
                                            cancelActionTitle:@"取消"] setupDelegate:weakself] showAlter];
     };
+}
+
+#pragma mark - 收藏帖子
+- (void)collectionPost {
+    UIImage *image = [[UIImage imageNamed:@"收藏"] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
+
+    if (self.detailModel.isMy) {
+        [self.wdNavigationBar.rightTwoButton setImage:image forState:UIControlStateNormal];
+        self.wdNavigationBar.rightTwoButton.imageView.tintColor = UIColor.whiteColor;
+        
+        if (self.detailModel.isCollection) {
+            self.wdNavigationBar.rightTwoButton.imageView.tintColor = kMainLightGreen;
+        } else {
+            self.wdNavigationBar.rightTwoButton.imageView.tintColor = UIColor.whiteColor;
+        }
+        
+        kWeakSelf(self)
+        self.wdNavigationBar.rightTwoButtonBlock = ^{
+            kRStrongSelf(self)
+            if (self.detailModel.isCollection) {
+                [[BBSNetworkTool shareInstance] unCollectPostWithId:self.detailModel.id successBlock:^(id  _Nonnull obj) {
+                    self.wdNavigationBar.rightTwoButton.imageView.tintColor = UIColor.whiteColor;
+                }];
+            } else {
+                [[BBSNetworkTool shareInstance] collectPostWithId:self.detailModel.id successBlock:^(id  _Nonnull obj) {
+                    self.wdNavigationBar.rightTwoButton.imageView.tintColor = kMainLightGreen;
+                }];
+            }
+        };
+    } else {
+        [self.wdNavigationBar.rightButton setImage:image forState:UIControlStateNormal];
+        if (self.detailModel.isCollection) {
+            self.wdNavigationBar.rightButton.imageView.tintColor = kMainLightGreen;
+        } else {
+            self.wdNavigationBar.rightButton.imageView.tintColor = UIColor.whiteColor;
+        }
+        
+        kWeakSelf(self)
+        self.wdNavigationBar.rightButtonBlock = ^{
+            kRStrongSelf(self)
+            if (self.detailModel.isCollection) {
+                [[BBSNetworkTool shareInstance] unCollectPostWithId:self.detailModel.id successBlock:^(id  _Nonnull obj) {
+                    self.wdNavigationBar.rightButton.imageView.tintColor = UIColor.whiteColor;
+                }];
+            } else {
+                [[BBSNetworkTool shareInstance] collectPostWithId:self.detailModel.id successBlock:^(id  _Nonnull obj) {
+                    self.wdNavigationBar.rightButton.imageView.tintColor = kMainLightGreen;
+                }];
+            }
+        };
+    }
 }
 
 - (void)alterView:(LZAlterView *)alterView didSelectedAtIndex:(NSInteger)index {
@@ -118,9 +175,15 @@
         [self.tableView reloadData];
         if (model.isMy) {
             [self deletePostData];
-        } else {
-            
         }
+        
+        if (model.isCollection) {
+            self.wdNavigationBar.rightTwoButton.imageView.tintColor = kMainLightGreen;
+        } else {
+            self.wdNavigationBar.rightTwoButton.imageView.tintColor = UIColor.whiteColor;
+        }
+        
+        [self collectionPost];
     }];
 }
 
@@ -306,7 +369,7 @@
         if (cell == nil) {
             cell = [[NSBundle mainBundle] loadNibNamed:@"PostArticleDetailCell" owner:self options:nil].firstObject;
         }
-        
+        cell.delegate = self;
         if (self.model) {
             cell.userPostModel = self.model;
         } else {
@@ -352,6 +415,18 @@
     [self.modelArray removeObjectAtIndex:indexPath.row];
     [tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:[NSIndexPath indexPathForRow:indexPath.row inSection:1]] withRowAnimation:UITableViewRowAnimationTop];
 }
+
+- (void)userInfoWithModel:(UserPostModel *)model {
+    if (model.isMy) {
+        WDPageViewController *vc = [[WDPageViewController alloc] init];
+        [self.navigationController pushViewController:vc animated:true];
+    } else {
+        UserCenterViewController *vc = [[UserCenterViewController alloc] init];
+        vc.userId = model.userId;
+        [self.navigationController pushViewController:vc animated:true];
+    }
+}
+
 #pragma mark  DZNEmptyDataSetSource 
 - (UIImage *)imageForEmptyDataSet:(UIScrollView *)scrollView{
     return [UIImage imageNamed:@"empty"];

@@ -14,6 +14,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (nonatomic , assign) bool      isLike;
 @property (nonatomic , assign) bool      isMy;
+@property (nonatomic , assign) bool      isCollection;
 @property (nonatomic , assign) NSInteger id;
 @property (nonatomic , assign) NSInteger commentNum;
 @property (nonatomic , assign) NSInteger likeNum;

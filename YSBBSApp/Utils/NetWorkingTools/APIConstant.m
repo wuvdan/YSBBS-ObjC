@@ -60,6 +60,20 @@ NSString * const getMessageListAPI        = @"message/list";
 
 NSString * const getMessageDetailAPI      = @"message/get";
 
+NSString * const getOtherUserInfoAPI      = @"user/userInfo";
+
+NSString * const followUserListAPI        = @"userFollow/list";
+
+NSString * const followUserAPI            = @"userFollow/add";
+
+NSString * const unfollowUserAPI          = @"userFollow/del";
+
+NSString * const collectionListAPI        = @"topicCollection/list";
+
+NSString * const collectPostAPI           = @"topicCollection/add";
+
+NSString * const unCollectPostAPI         = @"topicCollection/del";
+
 NSString * const getRemoteNotification    = @"/websocket";
 
 NSString * const modifyPassword           = @"user/modifyPwd";
